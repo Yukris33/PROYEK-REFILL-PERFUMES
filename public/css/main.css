@@ -1,0 +1,53 @@
+/* ===============================
+   FIX: MAIN CONTENT TIDAK KETUTUP DRAWER KIRI
+   (brute-force, pasti geser)
+   =============================== */
+
+:root{
+  --adj-w: 360px;     /* lebar panel Adjustment */
+  --adj-gap: 16px;
+  --sticky-top: 140px;
+}
+
+/* Geser seluruh area halaman ke kanan */
+main.container{
+  padding-left: calc(var(--adj-w) + var(--adj-gap));
+  transition: padding-left .25s ease;
+}
+
+/* Layout list + sidebar tetap rapi */
+.page{
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Sidebar ikut container */
+.page > .sidebar{
+  position: sticky;
+  top: var(--sticky-top);
+  height: calc(100vh - (var(--sticky-top) + 20px));
+  overflow: auto;
+}
+
+.page > .content{
+  min-width: 0;
+}
+
+/* Responsive: mobile jangan geser */
+@media (max-width: 992px){
+  main.container{
+    padding-left: 0;
+  }
+
+  .page{
+    grid-template-columns: 1fr;
+  }
+
+  .page > .sidebar{
+    position: relative;
+    top: auto;
+    height: auto;
+  }
+}

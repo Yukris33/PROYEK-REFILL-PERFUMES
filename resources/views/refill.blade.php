@@ -2,6 +2,10 @@
 
 @section('title', 'Refill Parfum')
 
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/main.css') }}">
+@endpush
+
 @section('content')
   <div class="breadcrumb">
     <a href="/">Home</a> <span>›</span>
