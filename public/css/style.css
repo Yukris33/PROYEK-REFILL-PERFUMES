@@ -127,3 +127,184 @@
 .hero-next:hover {
     background: rgba(0,0,0,0.8);
 }
+
+/* ===== MAIN NAV ===== */
+
+.mainnav {
+    background: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.mainnav__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 14px 40px;
+}
+
+/* nav links */
+.navlink {
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 18px;
+    transition: 0.2s;
+}
+
+.navlink:hover {
+    opacity: 0.6;
+}
+
+/* search tetap kanan */
+.navsearch {
+    position: absolute;
+    right: 40px;
+}
+
+.navsearch__input {
+    border: 1px solid #000;
+    padding: 8px 14px;
+    width: 200px;
+}
+
+/* FLAG LANG SWTICH*/
+.topbar__lang {
+  position: absolute;
+  left: 40px;         
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 5;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.lang-flag {
+  width: 26px;
+  height: 18px;        
+  object-fit: cover;
+  border-radius: 2px;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: .2s;
+}
+
+.lang-flag:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/*ADJUSTMENT NAVBAR*/
+
+/* Pastikan patokan */
+.mainnav__inner{
+  position: relative; /* WAJIB biar absolute nempel ke bar */
+  display: flex;      /* udah ada harusnya */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Adjustment (fix kiri) */
+.navadjustment{
+  position: absolute;     /* ini yang sering kelewat */
+  left: 40px;             /* lebih rapi konsisten */
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  z-index: 60;
+}
+
+.navadjustment__icon{
+  transition: .2s ease;
+}
+.navadjustment__icon.is-rot{
+  transform: rotate(180deg);
+}
+
+/* ===== PANEL CONTENT STYLE (MENU LIST) ===== */
+.adjpanel__inner{
+  padding: 16px;
+}
+
+.adjmenu{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* tiap section */
+.adjsection{
+  padding: 4px 2px;
+}
+
+.adjsection__title{
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* list item */
+.adjitem{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 6px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
+}
+
+.adjitem:hover{
+  background: #f6f6f6;
+}
+
+/* icon kanan */
+.adjitem__right{
+  opacity: .55;
+  font-size: 14px;
+}
+
+/* divider antar grup */
+.adjdivider{
+  height: 1px;
+  background: #eee;
+  margin: 2px 0;
+}
+
+.adjpanel{
+  position: absolute;
+  top: 100%;
+  left: 40px;
+  width: 360px;
+  right: auto;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: .22s ease;
+  z-index: 999;
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:12px;
+  box-shadow:0 18px 50px rgba(0,0,0,.08);
+}
+.adjpanel.is-open{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}

@@ -28,6 +28,22 @@
 
   <!-- HEADER PUTIH DI BAWAHNYA -->
   <header class="topbar">
+
+         <div class="topbar__lang">
+          <div class="lang-switch">
+              <img src="https://flagcdn.com/w40/id.png"
+                   alt="Indonesia"
+                   class="lang-flag"
+                   onclick="translatePage('id')">
+
+              <img src="https://flagcdn.com/w40/gb.png"
+                   alt="English"
+                   class="lang-flag"
+                   onclick="translatePage('en')">
+          </div>
+      </div>
+
+
       <div class="topbar__inner">
           <div class="topbar__left">
               <a href="/" class="brand">Perfume Store</a>
