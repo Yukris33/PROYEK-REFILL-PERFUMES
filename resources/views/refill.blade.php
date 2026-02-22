@@ -7,96 +7,341 @@
 @endpush
 
 @section('content')
-  <div class="breadcrumb">
-    <a href="/">Home</a> <span>›</span>
-    <a href="#">PARFUM</a> <span>›</span>
-    <span>Refill Parfum</span>
-  </div>
+<div class="refill-page">
+<div class="catalog">
+  <div class="catalog__grid">
 
-  <div class="pillbar">
-    <a class="pill is-active" href="#">All PARFUM</a>
-    <a class="pill" href="#">PARFUM WANITA</a>
-    <a class="pill" href="#">PARFUM PRIA</a>
-    <a class="pill" href="#">PARFUM UNISEX</a>
-    <a class="pill" href="{{ route('products.refill') }}">Refill Parfum</a>
-  </div>
-
-  <div class="page">
-    {{-- SIDEBAR --}}
-    <aside class="sidebar">
-      <h3 class="sidebar__title">REFILL PARFUM</h3>
-
-      <form method="GET" action="{{ route('products.refill') }}" class="filters">
-        <details open class="filter">
-          <summary>Harga</summary>
-          <div class="filter__body">
-            <input name="price_min" class="input" type="number" placeholder="Min" value="{{ request('price_min') }}">
-            <input name="price_max" class="input" type="number" placeholder="Max" value="{{ request('price_max') }}">
-          </div>
-        </details>
-
-        <button class="btn" type="submit">Terapkan</button>
-      </form>
-    </aside>
-
-    {{-- CONTENT --}}
-    <section class="content">
-      <div class="content__top">
-        <div class="count">({{ $products->total() }} produk)</div>
-
-        <form method="GET" action="{{ route('products.refill') }}">
-          {{-- keep query lain --}}
-          @foreach(request()->except('sort','page') as $k=>$v)
-            <input type="hidden" name="{{ $k }}" value="{{ $v }}">
-          @endforeach
-
-          <select name="sort" class="select" onchange="this.form.submit()">
-            <option value="popular"   @selected($sort==='popular')>Sortir: Populer</option>
-            <option value="newest"    @selected($sort==='newest')>Terbaru</option>
-            <option value="price_asc" @selected($sort==='price_asc')>Harga: Rendah → Tinggi</option>
-            <option value="price_desc"@selected($sort==='price_desc')>Harga: Tinggi → Rendah</option>
-          </select>
-        </form>
+    <!-- 01 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="{{ asset('img/peach bloom 4 (1) (1).png') }}" alt="Product 01">
       </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 01 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
 
-      <div class="grid">
-        @foreach($products as $p)
-          <article class="card">
-            <button class="wish" aria-label="Wishlist">♡</button>
-
-            <div class="badge-row">
-              @if($p->is_best_seller) <span class="badge">BEST SELLER</span> @endif
-              @if($p->is_new) <span class="badge">BARU</span> @endif
-              @if($p->is_engraveable) <span class="badge">ENGRAVABLE</span> @endif
-            </div>
-
-            <div class="imgwrap">
-              <img src="{{ $p->image_url }}" alt="{{ $p->name }}">
-            </div>
-
-            <h4 class="name">{{ strtoupper($p->name) }}</h4>
-            <p class="desc">{{ $p->short_desc }}</p>
-
-            <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span class="score">{{ number_format($p->rating, 1) }}</span>
-              <span class="count">({{ $p->review_count }})</span>
-            </div>
-
-            <select class="select w-full">
-              @foreach($p->variants as $v)
-                <option>{{ $v->label }}</option>
-              @endforeach
-            </select>
-
-            <div class="price">Rp {{ number_format($p->price, 0, ',', '.') }}</div>
-          </article>
-        @endforeach
+    <!-- 02 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="{{ asset('img/ocean breeze (1).png') }}" alt="Product 01">
       </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 02 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
 
-      <div class="pagination">
-        {{ $products->links() }}
+    <!-- 03 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/03.png" alt="Product 03" onerror="this.style.display='none'">
       </div>
-    </section>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 03 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 04 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/04.png" alt="Product 04" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 04 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 05 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/05.png" alt="Product 05" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 05 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 06 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/06.png" alt="Product 06" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 06 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 07 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/07.png" alt="Product 07" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 07 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 08 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/08.png" alt="Product 08" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 08 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 09 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/09.png" alt="Product 09" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 09 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 10 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/10.png" alt="Product 10" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 10 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 11 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/11.png" alt="Product 11" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 11 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 12 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/12.png" alt="Product 12" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 12 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 13 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/13.png" alt="Product 13" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 13 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 14 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/14.png" alt="Product 14" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 14 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 15 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/15.png" alt="Product 15" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 15 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 16 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/16.png" alt="Product 16" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 16 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 17 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/17.png" alt="Product 17" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 17 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 18 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/18.png" alt="Product 18" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 18 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 19 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/19.png" alt="Product 19" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 19 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 20 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/20.png" alt="Product 20" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 20 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 21 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/21.png" alt="Product 21" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 21 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 22 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/22.png" alt="Product 22" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 22 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 23 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/23.png" alt="Product 23" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 23 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 24 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/24.png" alt="Product 24" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 24 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 25 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/25.png" alt="Product 25" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 25 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 26 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/26.png" alt="Product 26" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 26 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 27 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/27.png" alt="Product 27" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 27 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 28 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/28.png" alt="Product 28" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 28 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 29 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/29.png" alt="Product 29" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 29 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
+    <!-- 30 -->
+    <article class="pitem">
+      <div class="pitem__img">
+        <img src="/uploads/products/30.png" alt="Product 30" onerror="this.style.display='none'">
+      </div>
+      <div class="pitem__kicker">WOOD</div>
+      <div class="pitem__name">HMNS Example Product 30 Eau De Parfum 100 ml</div>
+      <div class="pitem__price">Rp 320,000</div>
+      <div class="pitem__brand">HMNS Perfume</div>
+    </article>
+
   </div>
+</div>
+</div>
 @endsection

@@ -1,53 +1,116 @@
-/* ===============================
-   FIX: MAIN CONTENT TIDAK KETUTUP DRAWER KIRI
-   (brute-force, pasti geser)
-   =============================== */
+/* =========================================
+   REFILL (HUMANS STYLE) — FINAL
+   ========================================= */
 
 :root{
-  --adj-w: 360px;     /* lebar panel Adjustment */
-  --adj-gap: 16px;
-  --sticky-top: 140px;
+  --adj-w: 360px;      /* lebar panel Adjustment */
+  --pad-x: 40px;       /* padding nav kiri (Purpose's start) */
+  --right-pad: 40px;   /* padding kanan (sejajar search) */
+  --card-min: 320px;   /* bikin item lebih gede */
 }
 
-/* Geser seluruh area halaman ke kanan */
+/* matiin efek container yang ngunci tengah */
 main.container{
-  padding-left: calc(var(--adj-w) + var(--adj-gap));
-  transition: padding-left .25s ease;
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
 }
 
-/* Layout list + sidebar tetap rapi */
-.page{
+/* wrapper khusus halaman refill */
+.refill-page{ width: 100%; }
+
+/* container katalog */
+.refill-page .catalog{
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 40px var(--right-pad) 90px 0;
+}
+
+/* GRID: start sejajar Purpose's + lebar sampai batas kuning kanan */
+.refill-page .catalog__grid{
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 32px;
+  grid-template-columns: repeat(3, minmax(var(--card-min), 1fr));
+  column-gap: 120px;
+  row-gap: 80px;
   align-items: start;
+
+  margin-left: calc(var(--adj-w) + var(--pad-x));
+  width: calc(100% - (var(--adj-w) + var(--pad-x) + var(--right-pad)));
 }
 
-/* Sidebar ikut container */
-.page > .sidebar{
-  position: sticky;
-  top: var(--sticky-top);
-  height: calc(100vh - (var(--sticky-top) + 20px));
-  overflow: auto;
+/* item */
+.refill-page .pitem{ background: transparent; }
+
+/* image frame */
+.refill-page .pitem__img{
+  width: 100%;
+  height: 260px;          
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;     /* lebih rapet */
+  background: #fff;
+}
+.refill-page .pitem__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
-.page > .content{
-  min-width: 0;
+/* text */
+.refill-page .pitem__kicker{
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.refill-page .pitem__name{
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  margin-bottom: 8px;
+  max-width: 270px;
+}
+.refill-page .pitem__price{
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.refill-page .pitem__brand{
+  font-size: 12px;
+  opacity: .55;
 }
 
-/* Responsive: mobile jangan geser */
+/* responsive */
+@media (max-width: 1100px){
+  .refill-page .catalog__grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 60px;
+    row-gap: 80px;
+
+    margin-left: calc(var(--adj-w) + var(--pad-x));
+    width: calc(100% - (var(--adj-w) + var(--pad-x) + var(--right-pad)));
+  }
+}
+
 @media (max-width: 992px){
-  main.container{
-    padding-left: 0;
+  .refill-page .catalog{
+    padding: 24px 18px 60px;
   }
+  .refill-page .catalog__grid{
+    margin-left: 0;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 40px;
+    row-gap: 60px;
+  }
+}
 
-  .page{
+@media (max-width: 700px){
+  .refill-page .catalog__grid{
     grid-template-columns: 1fr;
-  }
-
-  .page > .sidebar{
-    position: relative;
-    top: auto;
-    height: auto;
+    row-gap: 50px;
   }
 }

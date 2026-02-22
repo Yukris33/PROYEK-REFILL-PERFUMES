@@ -18,3 +18,7 @@ Route::get('/refill', function () {
 Route::get('/', function () {
     return redirect()->route('products.refill');
 });
+
+Route::prefix('parfum')->group(function () {
+    require __DIR__.'/products.refill.php';
+});
