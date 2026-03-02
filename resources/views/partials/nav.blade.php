@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-</head>
-<body>
-
 <nav class="mainnav" id="mainNav">
   <div class="mainnav__inner">
 
@@ -213,8 +205,8 @@
     <!-- /adjwrap -->
 
     <!-- NAV LINKS -->
-    <a href="/" class="navlink">Purpose's</a>
-    <a href="#" class="navlink">Brand</a>
+    <a href="{{ route('home') }}" class="navlink">Purpose's</a>
+    <a href="{{ route('nav.brand') }}" class="navlink">Brand</a>
     <a href="#" class="navlink">Discount</a>
     <a href="#" class="navlink">Place</a>
     <a href="#" class="navlink">FAQ & Vending Mechine</a>
@@ -281,5 +273,3 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-</body>
-</html>

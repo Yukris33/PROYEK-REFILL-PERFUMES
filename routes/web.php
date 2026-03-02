@@ -5,19 +5,31 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 Route::get('/refill', function () {
 
-    $sort = request('sort', 'popular'); // <-- tambahin ini
+    $sort = request('sort', 'popular');
 
     $products = new LengthAwarePaginator([], 0, 12, 1, [
         'path' => request()->url(),
         'query' => request()->query(),
     ]);
 
-    return view('refill', compact('products', 'sort')); // <-- tambahin sort
+    return view('refill', compact('products', 'sort'));
 })->name('products.refill');
 
+Route::get('/brand', function () {
+
+    $sort = request('sort', 'popular');
+
+    $products = new LengthAwarePaginator([], 0, 12, 1, [
+        'path' => request()->url(),
+        'query' => request()->query(),
+    ]);
+
+    return view('refill', compact('products', 'sort'));
+})->name('nav.brand');
+
 Route::get('/', function () {
-    return redirect()->route('products.refill');
-});
+    return view('home');
+})->name('home');
 
 Route::prefix('parfum')->group(function () {
     require __DIR__.'/products.refill.php';

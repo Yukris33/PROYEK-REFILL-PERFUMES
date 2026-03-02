@@ -1,3 +1,14 @@
+:root{
+  --adj-w: 360px;      /* lebar panel Adjustment */
+  --pad-x: 40px;       /* jarak dari kiri */
+  --right-pad: 40px;   /* sejajar search kanan */
+}
+
+#app-content.pjax-loading {
+  pointer-events: none;
+  opacity: .6;
+}
+
 /* ====== PROMO BAR (HITAM) ====== */
 .promo-bar {
   background: #000;
@@ -301,7 +312,7 @@
   background:#fff;
   border:1px solid #eee;
   border-radius:12px;
-  box-shadow:0 18px 50px rgba(0,0,0,.08);
+  box-shadow:0 18px 50px rgba(0,0,0,0.08);
   max-height: calc(100vh - 220px);
   overflow: hidden;
 }
@@ -318,4 +329,42 @@
   bottom: 0;
   background: #fff;
   padding-top: 12px;
+}
+
+.mainnav{
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+#app-content { will-change: transform, opacity; }
+.pjax-anim { transition: opacity .22s ease, transform .22s ease; }
+.pjax-out-left  { opacity: 0; transform: translateX(-18px); }
+.pjax-out-right { opacity: 0; transform: translateX( 18px); }
+.pjax-in-from-right { opacity: 0; transform: translateX( 18px); }
+.pjax-in-from-left  { opacity: 0; transform: translateX(-18px); }
+
+
+/* Pastikan nav jadi anchor positioning */
+.navbar, .nav, .nav-wrap, .top-nav {
+  position: relative;
+}
+
+/* Dropdown / mega menu PURPOSE’s */
+.nav-item.purposes,
+.nav-item.purposes { position: relative; }
+
+/* Kalau kamu pakai dropdown-menu */
+.nav-item.purposes .dropdown-menu,
+.nav-item.purposes .mega-menu {
+  position: absolute;
+  top: 100%;
+
+  /* ini kuncinya: mulai setelah panel kiri + padding */
+  left: calc(var(--adj-w) + var(--pad-x));
+  right: var(--right-pad);
+
+  width: auto;
+  max-width: none;
+  box-sizing: border-box;
 }

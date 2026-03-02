@@ -2,11 +2,10 @@
 
 @section('title', 'Refill Parfum')
 
-@push('styles')
-<link rel="stylesheet" href="{{ asset('css/main.css') }}">
-@endpush
 
 @section('content')
+<div data-page-css="{{ asset('css/main.css') }}"></div>
+<div id="page" class="page">
 <div class="refill-page">
 <div class="catalog">
   <div class="catalog__grid">
@@ -16,54 +15,54 @@
       <div class="pitem__img">
         <img src="{{ asset('img/peach bloom 4 (1) (1).png') }}" alt="Product 01">
       </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 01 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
+      <div class="pitem__kicker">Prestige</div>
+      <div class="pitem__name">SCENTC Prestige Signature Eau De Parfum</div>
+      <div class="pitem__price">15ml 30ml 50ml 100ml</div>
+      <div class="pitem__brand">SCENTCYCLE PERFUME</div>
     </article>
 
     <!-- 02 -->
     <article class="pitem">
       <div class="pitem__img">
-        <img src="{{ asset('img/ocean breeze (1).png') }}" alt="Product 01">
+        <img src="{{ asset('img/ocean breeze fix.png') }}" alt="Product 02">
       </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 02 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
+      <div class="pitem__kicker">Aquatic Fresh</div>
+      <div class="pitem__name">SCENTC Ocean Breeze Aqua Eau De Parfum</div>
+      <div class="pitem__price">20ml 30ml 50ml 100ml</div>
+      <div class="pitem__brand">SCENTCYCLE PERFUME</div>
     </article>
 
     <!-- 03 -->
     <article class="pitem">
       <div class="pitem__img">
-        <img src="/uploads/products/03.png" alt="Product 03" onerror="this.style.display='none'">
+        <img src="{{ asset('img/midnight.png') }}" alt="Product 03">
       </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 03 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
+      <div class="pitem__kicker">Woody Oud</div>
+      <div class="pitem__name">SCENTC Midnight Oud Intense Eau De Parfum</div>
+      <div class="pitem__price">20ml 50ml 100ml</div>
+      <div class="pitem__brand">SCENTCYCLE PERFUME</div>
     </article>
 
     <!-- 04 -->
     <article class="pitem">
       <div class="pitem__img">
-        <img src="/uploads/products/04.png" alt="Product 04" onerror="this.style.display='none'">
+        <img src="{{ asset('img/citrus.png') }}" alt="Product 04">
       </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 04 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
+      <div class="pitem__kicker">Citrus Fresh</div>
+      <div class="pitem__name">SCENTC Citrus Aura Fresh Eau De Cologne</div>
+      <div class="pitem__price">10ml 30ml 50ml 70ml</div>
+      <div class="pitem__brand">SCENTCYCLE PERFUME</div>
     </article>
 
     <!-- 05 -->
     <article class="pitem">
       <div class="pitem__img">
-        <img src="/uploads/products/05.png" alt="Product 05" onerror="this.style.display='none'">
+        <img src="{{ asset('img/velvet1.png') }}" alt="Product 05">
       </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 05 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
+      <div class="pitem__kicker">Floral Elegant</div>
+      <div class="pitem__name">SCENTC Velvet Bloom Eau De Toilette</div>
+      <div class="pitem__price">20ml 50ml 70ml</div>
+      <div class="pitem__brand">SCENTCYCLE PERFUME</div>
     </article>
 
     <!-- 06 -->
@@ -342,6 +341,7 @@
     </article>
 
   </div>
+</div>
 </div>
 </div>
 @endsection

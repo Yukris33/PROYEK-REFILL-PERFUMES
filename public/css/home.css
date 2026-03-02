@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  --ink: #111;
+  --muted: rgba(0,0,0,.62);
+  --line: rgba(0,0,0,.10);
+  --soft: #fafafa;
+
+  --content: 1200px;
+}
+
+/* =========================================================
+   1) RESET WRAPPER THEME (BIAR GA KURUS) - BIARIN AJA
+   ========================================================= */
+html, body{
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* beberapa theme ngasih overflow hidden → bikin breakout kepotong */
+body{
+  overflow-x: hidden;
+}
+
+/* coba “longgarin” container umum */
+#app-content,
+main,
+#page,
+.page,
+.container,
+.container-fluid,
+.page-content,
+.content,
+.content-wrapper,
+.wrapper,
+.wrap,
+.inner,
+.site-content{
+  max-width: none !important;
+}
+
+/* =========================================================
+   2) BREAK OUT YANG STABIL: center ke viewport + lebar normal
+   Ini KUNCI biar ga kurus walau parent kolom sempit
+   (JANGAN UBAH)
+   ========================================================= */
+.home-rail{
+  /* breakout terhadap viewport */
+  position: relative !important;
+  left: 50vw !important;
+  transform: translateX(-50%) !important;
+
+  /* lebar konten: maksimal 1200px, tapi aman di layar kecil */
+  width: min(var(--content), calc(100vw - 48px)) !important;
+  max-width: none !important;
+
+  /* reset margin theme */
+  margin: 0 !important;
+
+  /* padding aman */
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  box-sizing: border-box !important;
+
+  /* jaga-jaga kalau parent flex/grid bikin shrink */
+  min-width: 0 !important;
+}
+
+/* ---------- PAGE WRAPPER ---------- */
+.home-page{
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 48px;
+  padding-bottom: 90px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--ink);
+
+  /* tambah dikit biar ga sakit mata */
+  font-size: 16.6px;
+  line-height: 1.9;
+}
+
+/* ---------- HERO ---------- */
+.sc-hero{
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: #fff;
+    padding: 56px 44px 56px 40px;
+}
+
+.sc-hero__top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.sc-eyebrow{
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.55);
+}
+
+.sc-tag{
+  font-size: 12px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: rgba(0,0,0,.65);
+  background: #fff;
+}
+
+.sc-title{
+  margin: 8px 0 14px;
+  font-family: Cinzel, serif;
+  font-weight: 600;
+  letter-spacing: 4px;
+  font-size: clamp(44px, 5vw, 74px);
+  line-height: 1.02;
+
+  /* biar kata panjang ga kepotong aneh */
+  overflow-wrap: anywhere;
+}
+
+.sc-desc{
+  margin: 0 0 18px;
+  max-width: 100%;   
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+.sc-desc--sub{
+  margin-top: -6px;
+  color: rgba(0,0,0,.58);
+}
+
+.sc-cta{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.sc-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 600;
+  border: 1px solid var(--ink);
+  transition: transform .15s ease, opacity .15s ease;
+}
+.sc-btn:hover{ transform: translateY(-1px); opacity: .92; }
+
+.sc-btn--primary{ background: #111; color: #fff; }
+.sc-btn--ghost{ background: #fff; color: #111; }
+
+/* ---------- Section Head ---------- */
+.sc-head{
+  margin-bottom: 16px;
+}
+
+.sc-h2{
+  margin: 0 0 8px;
+  font-size: 28px;
+  letter-spacing: .2px;
+}
+
+.sc-lead{
+  margin: 0;
+  max-width: 85ch;
+  color: var(--muted);
+  line-height: 1.95;
+  font-size: 16.8px;
+}
+
+/* =========================================================
+   WHY - BARU (gambar + text selang-seling)
+   HTML harus pakai:
+   <div class="why-rows">
+     <article class="why-row">...</article>
+     <article class="why-row why-row--reverse">...</article>
+     <article class="why-row">...</article>
+   </div>
+   ========================================================= */
+.sc-why{
+  margin-top: 34px;
+}
+
+/* kalau masih ada WHY lama, ga masalah—tapi yang kepake yang baru */
+.why-grid{ display: none; }
+
+.why-rows{
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.why-row{
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 18px;
+  align-items: center;
+    padding-left: 18px;
+  padding-right: 18px;
+
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+  padding: 18px 18px;
+  box-shadow: 0 14px 40px rgba(0,0,0,.04);
+}
+
+.why-row--reverse{
+  grid-template-columns: 1.1fr 1fr;
+}
+
+.why-row--reverse .why-media{ order: 2; }
+.why-row--reverse .why-body{ order: 1; }
+
+.why-media{
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #fafafa;
+}
+
+.why-media img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.why-body{
+  padding-left: 6px;   /* kecilin supaya start text lebih ke kiri */
+}
+
+.why-body .why-title{
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.why-body .why-text{
+  margin: 0 0 10px;
+  font-size: 16.2px;
+  line-height: 1.9;
+  color: rgba(0,0,0,.66);
+}
+
+.why-points{
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(0,0,0,.62);
+}
+.why-points li{ margin: 6px 0; line-height: 1.75; }
+
+/* ---------- Frame Steps ---------- */
+.sc-frame{
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--soft);
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.frame-title{
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.frame-sub{
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: rgba(0,0,0,.58);
+}
+
+.steps{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.step{
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px 12px;
+  font-size: 14.6px;
+  color: rgba(0,0,0,.78);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.step-num{
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: rgba(0,0,0,.55);
+}
+
+/* ---------- SDG ---------- */
+.sc-sdg{
+  margin-top: 34px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: #fff;
+  padding: 22px;
+}
+
+.sdg-story{
+  margin-top: 12px;
+  max-width: 100ch;
+}
+.sdg-story p{
+  margin: 0 0 12px;
+  font-size: 16.4px;
+  line-height: 1.95;
+  color: rgba(0,0,0,.66);
+}
+
+.sdg-grid{
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.sdg-card{
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.sdg-card img{
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px){
+  .sc-hero{ padding: 44px 22px; }
+  .sdg-grid{ grid-template-columns: 1fr; }
+  .sc-frame{ grid-template-columns: 1fr; }
+  .sc-hero__top{ flex-direction: column; align-items: flex-start; }
+
+  .why-row,
+  .why-row--reverse{ grid-template-columns: 1fr; }
+  .why-row--reverse .why-media,
+  .why-row--reverse .why-body{ order: initial; }
+}
+
+/* Bikin teks paragraf rata kiri-kanan */
+.sc-desc,
+.sc-lead,
+.why-text,
+.sdg-story p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Biar nggak terlalu renggang dan tetap enak dibaca */
+.sc-desc,
+.sc-lead,
+.why-text,
+.sdg-story p {
+  hyphens: auto;
+}

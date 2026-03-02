@@ -1,23 +1,18 @@
 /* =========================================
-   REFILL (HUMANS STYLE) — FINAL
+   REFILL (HUMANS STYLE) — CLEAN
    ========================================= */
 
 :root{
   --adj-w: 360px;      /* lebar panel Adjustment */
   --pad-x: 40px;       /* padding nav kiri (Purpose's start) */
   --right-pad: 40px;   /* padding kanan (sejajar search) */
-  --card-min: 320px;   /* bikin item lebih gede */
-}
-
-/* matiin efek container yang ngunci tengah */
-main.container{
-  max-width: none !important;
-  width: 100% !important;
-  margin: 0 !important;
+  --card-min: 320px;   /* ukuran minimum card */
 }
 
 /* wrapper khusus halaman refill */
-.refill-page{ width: 100%; }
+.refill-page{
+  width: 100%;
+}
 
 /* container katalog */
 .refill-page .catalog{
@@ -25,9 +20,10 @@ main.container{
   width: 100%;
   margin: 0;
   padding: 40px var(--right-pad) 90px 0;
+  box-sizing: border-box;
 }
 
-/* GRID: start sejajar Purpose's + lebar sampai batas kuning kanan */
+/* GRID: start sejajar Purpose's + lebar sampai batas kanan */
 .refill-page .catalog__grid{
   display: grid;
   grid-template-columns: repeat(3, minmax(var(--card-min), 1fr));
@@ -35,23 +31,29 @@ main.container{
   row-gap: 80px;
   align-items: start;
 
+  /* offset supaya mulai setelah panel adjustment + padding kiri */
   margin-left: calc(var(--adj-w) + var(--pad-x));
   width: calc(100% - (var(--adj-w) + var(--pad-x) + var(--right-pad)));
+  box-sizing: border-box;
 }
 
 /* item */
-.refill-page .pitem{ background: transparent; }
+.refill-page .pitem{
+  background: transparent;
+}
 
 /* image frame */
 .refill-page .pitem__img{
   width: 100%;
-  height: 260px;          
+  height: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 6px;     /* lebih rapet */
+  margin-bottom: 6px;
   background: #fff;
+  box-sizing: border-box;
 }
+
 .refill-page .pitem__img img{
   width: 100%;
   height: 100%;
@@ -66,24 +68,32 @@ main.container{
   text-transform: uppercase;
   margin-bottom: 10px;
 }
+
 .refill-page .pitem__name{
   font-size: 14px;
   font-weight: 500;
   line-height: 1.45;
   margin-bottom: 8px;
   max-width: 270px;
+  word-break: normal;
+  overflow-wrap: anywhere;
 }
+
 .refill-page .pitem__price{
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 8px;
 }
+
 .refill-page .pitem__brand{
   font-size: 12px;
   opacity: .55;
 }
 
-/* responsive */
+/* =========================
+   RESPONSIVE
+   ========================= */
+
 @media (max-width: 1100px){
   .refill-page .catalog__grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -99,9 +109,11 @@ main.container{
   .refill-page .catalog{
     padding: 24px 18px 60px;
   }
+
   .refill-page .catalog__grid{
     margin-left: 0;
     width: 100%;
+
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 40px;
     row-gap: 60px;
