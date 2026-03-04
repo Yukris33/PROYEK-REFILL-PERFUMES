@@ -18,7 +18,7 @@
       <div class="pitem__kicker">Prestige</div>
       <div class="pitem__name">SCENTC Prestige Signature Eau De Parfum</div>
       <div class="pitem__price">15ml 30ml 50ml 100ml</div>
-      <div class="pitem__brand">SCENTCYCLE PERFUME</div>
+      <div class="pitem__brand">Luxurious. Warm. Timeless.</div>
     </article>
 
     <!-- 02 -->
@@ -29,7 +29,7 @@
       <div class="pitem__kicker">Aquatic Fresh</div>
       <div class="pitem__name">SCENTC Ocean Breeze Aqua Eau De Parfum</div>
       <div class="pitem__price">20ml 30ml 50ml 100ml</div>
-      <div class="pitem__brand">SCENTCYCLE PERFUME</div>
+      <div class="pitem__brand">Fresh. Clean. Invigorating.</div>
     </article>
 
     <!-- 03 -->
@@ -40,7 +40,7 @@
       <div class="pitem__kicker">Woody Oud</div>
       <div class="pitem__name">SCENTC Midnight Oud Intense Eau De Parfum</div>
       <div class="pitem__price">20ml 50ml 100ml</div>
-      <div class="pitem__brand">SCENTCYCLE PERFUME</div>
+      <div class="pitem__brand">Dark. Bold. Intense.</div>
     </article>
 
     <!-- 04 -->
@@ -51,7 +51,7 @@
       <div class="pitem__kicker">Citrus Fresh</div>
       <div class="pitem__name">SCENTC Citrus Aura Fresh Eau De Cologne</div>
       <div class="pitem__price">10ml 30ml 50ml 70ml</div>
-      <div class="pitem__brand">SCENTCYCLE PERFUME</div>
+      <div class="pitem__brand">Bright. Crisp. Energizing.</div>
     </article>
 
     <!-- 05 -->
@@ -62,27 +62,27 @@
       <div class="pitem__kicker">Floral Elegant</div>
       <div class="pitem__name">SCENTC Velvet Bloom Eau De Toilette</div>
       <div class="pitem__price">20ml 50ml 70ml</div>
-      <div class="pitem__brand">SCENTCYCLE PERFUME</div>
+      <div class="pitem__brand">Soft. Elegant. Timeless.</div>
     </article>
 
     <!-- 06 -->
     <article class="pitem">
       <div class="pitem__img">
-        <img src="/uploads/products/06.png" alt="Product 06" onerror="this.style.display='none'">
+        <img src="{{ asset('img/vanila.png') }}" alt="Product 06">
       </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 06 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
+      <div class="pitem__kicker">GOURMAND WARM</div>
+      <div class="pitem__name">SCENTC Vannila Suede Eau De Parfum 100 ml</div>
+      <div class="pitem__price">10ml 30ml 50ml 70ml</div>
+      <div class="pitem__brand">Warm. Creamy. Addictive</div>
     </article>
 
     <!-- 07 -->
     <article class="pitem">
       <div class="pitem__img">
-        <img src="/uploads/products/07.png" alt="Product 07" onerror="this.style.display='none'">
+        <img src="{{ asset('img/silver2.png') }}" alt="Product 07">
       </div>
       <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 07 Eau De Parfum 100 ml</div>
+      <div class="pitem__name">SCENTC Silver Mist Eau De Toilette</div>
       <div class="pitem__price">Rp 320,000</div>
       <div class="pitem__brand">HMNS Perfume</div>
     </article>
@@ -90,10 +90,10 @@
     <!-- 08 -->
     <article class="pitem">
       <div class="pitem__img">
-        <img src="/uploads/products/08.png" alt="Product 08" onerror="this.style.display='none'">
+        <img src="{{ asset('img/blue.png') }}" alt="Product 08">
       </div>
       <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 08 Eau De Parfum 100 ml</div>
+      <div class="pitem__name">SCENTC Blue Neroli Eau De Toilette</div>
       <div class="pitem__price">Rp 320,000</div>
       <div class="pitem__brand">HMNS Perfume</div>
     </article>
@@ -101,7 +101,7 @@
     <!-- 09 -->
     <article class="pitem">
       <div class="pitem__img">
-        <img src="/uploads/products/09.png" alt="Product 09" onerror="this.style.display='none'">
+        <img src="{{ asset('img/green.jpeg') }}" alt="Product 08">
       </div>
       <div class="pitem__kicker">WOOD</div>
       <div class="pitem__name">HMNS Example Product 09 Eau De Parfum 100 ml</div>
