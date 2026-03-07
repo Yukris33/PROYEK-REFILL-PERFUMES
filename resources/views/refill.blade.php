@@ -2,346 +2,195 @@
 
 @section('title', 'Refill Parfum')
 
-
 @section('content')
-<div data-page-css="{{ asset('css/main.css') }}"></div>
-<div id="page" class="page">
-<div class="refill-page">
-<div class="catalog">
-  <div class="catalog__grid">
+<div data-page-css="{{ asset('css/main.css?v=101') }}"></div>
+  <div class="refill-page">
+    <div class="catalog">
+      <div class="catalog__grid">
 
-    <!-- 01 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="{{ asset('img/peach bloom 4 (1) (1).png') }}" alt="Product 01">
-      </div>
-      <div class="pitem__kicker">Prestige</div>
-      <div class="pitem__name">SCENTC Prestige Signature Eau De Parfum</div>
-      <div class="pitem__price">15ml 30ml 50ml 100ml</div>
-      <div class="pitem__brand">Luxurious. Warm. Timeless.</div>
-    </article>
+        <!-- 01 -->
+        <article class="pitem">
+          <div class="pitem__img">
+            <img src="{{ asset('img/peach bloom 4 (1) (1).png') }}" alt="Product 01">
+          </div>
+          <div class="pitem__kicker">Prestige</div>
+          <div class="pitem__name">SCENTC Prestige Signature Eau De Parfum</div>
+          <div class="pitem__price">15ml 30ml 50ml 100ml</div>
+          <div class="pitem__brand">Luxurious. Warm. Timeless.</div>
+        </article>
 
-    <!-- 02 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="{{ asset('img/ocean breeze fix.png') }}" alt="Product 02">
-      </div>
-      <div class="pitem__kicker">Aquatic Fresh</div>
-      <div class="pitem__name">SCENTC Ocean Breeze Aqua Eau De Parfum</div>
-      <div class="pitem__price">20ml 30ml 50ml 100ml</div>
-      <div class="pitem__brand">Fresh. Clean. Invigorating.</div>
-    </article>
+        <!-- 02 -->
+        <article class="pitem">
+          <div class="pitem__img">
+            <img src="{{ asset('img/ocean breeze fix.png') }}" alt="Product 02">
+          </div>
+          <div class="pitem__kicker">Aquatic Fresh</div>
+          <div class="pitem__name">SCENTC Ocean Breeze Aqua Eau De Parfum</div>
+          <div class="pitem__price">20ml 30ml 50ml 100ml</div>
+          <div class="pitem__brand">Fresh. Clean. Invigorating.</div>
+        </article>
 
-    <!-- 03 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="{{ asset('img/midnight.png') }}" alt="Product 03">
-      </div>
-      <div class="pitem__kicker">Woody Oud</div>
-      <div class="pitem__name">SCENTC Midnight Oud Intense Eau De Parfum</div>
-      <div class="pitem__price">20ml 50ml 100ml</div>
-      <div class="pitem__brand">Dark. Bold. Intense.</div>
-    </article>
+        <!-- 03 -->
+        <article class="pitem">
+          <div class="pitem__img">
+            <img src="{{ asset('img/midnight.png') }}" alt="Product 03">
+          </div>
+          <div class="pitem__kicker">Woody Oud</div>
+          <div class="pitem__name">SCENTC Midnight Oud Intense Eau De Parfum</div>
+          <div class="pitem__price">20ml 50ml 100ml</div>
+          <div class="pitem__brand">Dark. Bold. Intense.</div>
+        </article>
 
-    <!-- 04 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="{{ asset('img/citrus.png') }}" alt="Product 04">
-      </div>
-      <div class="pitem__kicker">Citrus Fresh</div>
-      <div class="pitem__name">SCENTC Citrus Aura Fresh Eau De Cologne</div>
-      <div class="pitem__price">10ml 30ml 50ml 70ml</div>
-      <div class="pitem__brand">Bright. Crisp. Energizing.</div>
-    </article>
+        <!-- 04 -->
+        <article class="pitem">
+          <div class="pitem__img">
+            <img src="{{ asset('img/citrus.png') }}" alt="Product 04">
+          </div>
+          <div class="pitem__kicker">Citrus Fresh</div>
+          <div class="pitem__name">SCENTC Citrus Aura Fresh Eau De Cologne</div>
+          <div class="pitem__price">10ml 30ml 50ml 70ml</div>
+          <div class="pitem__brand">Bright. Crisp. Energizing.</div>
+        </article>
 
-    <!-- 05 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="{{ asset('img/velvet1.png') }}" alt="Product 05">
-      </div>
-      <div class="pitem__kicker">Floral Elegant</div>
-      <div class="pitem__name">SCENTC Velvet Bloom Eau De Toilette</div>
-      <div class="pitem__price">20ml 50ml 70ml</div>
-      <div class="pitem__brand">Soft. Elegant. Timeless.</div>
-    </article>
+        <!-- 05 -->
+        <article class="pitem">
+          <div class="pitem__img">
+            <img src="{{ asset('img/velvet1.png') }}" alt="Product 05">
+          </div>
+          <div class="pitem__kicker">Floral Elegant</div>
+          <div class="pitem__name">SCENTC Velvet Bloom Eau De Toilette</div>
+          <div class="pitem__price">20ml 50ml 70ml</div>
+          <div class="pitem__brand">Soft. Elegant. Timeless.</div>
+        </article>
 
-    <!-- 06 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="{{ asset('img/vanila.png') }}" alt="Product 06">
-      </div>
-      <div class="pitem__kicker">GOURMAND WARM</div>
-      <div class="pitem__name">SCENTC Vannila Suede Eau De Parfum 100 ml</div>
-      <div class="pitem__price">10ml 30ml 50ml 70ml</div>
-      <div class="pitem__brand">Warm. Creamy. Addictive</div>
-    </article>
+        <!-- 06 -->
+        <article class="pitem">
+          <div class="pitem__img">
+            <img src="{{ asset('img/vanila.png') }}" alt="Product 06">
+          </div>
+          <div class="pitem__kicker">GOURMAND WARM</div>
+          <div class="pitem__name">SCENTC Vannila Suede Eau De Parfum 100 ml</div>
+          <div class="pitem__price">10ml 30ml 50ml 70ml</div>
+          <div class="pitem__brand">Warm. Creamy. Addictive.</div>
+        </article>
 
-    <!-- 07 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="{{ asset('img/silver2.png') }}" alt="Product 07">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">SCENTC Silver Mist Eau De Toilette</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
+        <!-- 07 -->
+        <article class="pitem">
+          <div class="pitem__img">
+            <img src="{{ asset('img/silver2.png') }}" alt="Product 07">
+          </div>
+          <div class="pitem__kicker">WOOD FRESH</div>
+          <div class="pitem__name">SCENTC Silver Mist Eau De Toilette</div>
+          <div class="pitem__price">10ml 20ml 25ml 30ml</div>
+          <div class="pitem__brand">Cool. Clean. Modern.</div>
+        </article>
 
-    <!-- 08 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="{{ asset('img/blue.png') }}" alt="Product 08">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">SCENTC Blue Neroli Eau De Toilette</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
+        <!-- 08 -->
+        <article class="pitem">
+          <div class="pitem__img">
+            <img src="{{ asset('img/blue.png') }}" alt="Product 08">
+          </div>
+          <div class="pitem__kicker">CITRUS WOOD</div>
+          <div class="pitem__name">SCENTC Blue Neroli Eau De Toilette</div>
+          <div class="pitem__price">20ml 25ml 30ml</div>
+          <div class="pitem__brand">Fresh. Bright. Airy.</div>
+        </article>
 
-    <!-- 09 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="{{ asset('img/green.jpeg') }}" alt="Product 08">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 09 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
+        <!-- 09 -->
+        <article class="pitem">
+          <div class="pitem__img">
+            <img src="{{ asset('img/green.jpeg') }}" alt="Product 09">
+          </div>
+          <div class="pitem__kicker">WOOD INTENSE</div>
+          <div class="pitem__name">SCENTC Emerald Cedar Eau De Parfum</div>
+          <div class="pitem__price">10ml 20ml 30ml</div>
+          <div class="pitem__brand">Deep. Smooth. Sophisticated.</div>
+        </article>
 
-    <!-- 10 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/10.png" alt="Product 10" onerror="this.style.display='none'">
       </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 10 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
+    </div>
 
-    <!-- 11 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/11.png" alt="Product 11" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 11 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
 
-    <!-- 12 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/12.png" alt="Product 12" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 12 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
+<section class="refill-guide-wide">
+  <div class="refill-guide-wide__container">
 
-    <!-- 13 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/13.png" alt="Product 13" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 13 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
+    <div class="refill-guide-wide__intro">
+      <div class="refill-guide-wide__label">REFILL GUIDE</div>
+      <h2 class="refill-guide-wide__title">Cara Refill di Scentcycle</h2>
 
-    <!-- 14 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/14.png" alt="Product 14" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 14 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
+      <p class="refill-guide-wide__desc">
+        Nikmati pengalaman refill parfum yang lebih praktis, higienis, dan terarah.
+        Setiap tahap dirancang agar proses pengisian berjalan aman, presisi, dan tetap nyaman
+        untuk setiap pelanggan, mulai dari memilih scent, menyiapkan botol yang sesuai,
+        memosisikan botol pada mesin, memantau proses pengisian secara real-time,
+        hingga botol kembali siap digunakan atau dibawa pulang dalam kondisi optimal.
+      </p>
+    </div>
 
-    <!-- 15 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/15.png" alt="Product 15" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 15 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
+    <div class="refill-guide-wide__steps">
+      <article class="refill-guide-card">
+        <div class="refill-guide-card__number">01</div>
+        <div class="refill-guide-card__content">
+          <h3>Menentukan Scent</h3>
+          <p>
+            Pilih scent favorit Anda melalui website Scentcycle dengan memastikan varian aroma,
+            ukuran isi, dan detail pesanan sudah benar. Tahap ini penting agar proses refill
+            selanjutnya berjalan lebih cepat, tepat, dan sesuai dengan preferensi yang Anda inginkan.
+          </p>
+        </div>
+      </article>
 
-    <!-- 16 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/16.png" alt="Product 16" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 16 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
+      <article class="refill-guide-card">
+        <div class="refill-guide-card__number">02</div>
+        <div class="refill-guide-card__content">
+          <h3>Siapkan Botol</h3>
+          <p>
+            Gunakan botol yang bersih, kering, dan aman untuk proses pengisian ulang. Pastikan juga
+            ukuran botol compatible dengan kapasitas refill yang dipilih agar parfum dapat terisi
+            dengan baik tanpa mengganggu kualitas, kebersihan, maupun kenyamanan saat proses berlangsung.
+          </p>
+        </div>
+      </article>
 
-    <!-- 17 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/17.png" alt="Product 17" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 17 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
+      <article class="refill-guide-card">
+        <div class="refill-guide-card__number">03</div>
+        <div class="refill-guide-card__content">
+          <h3>Posisikan Botol</h3>
+          <p>
+            Letakkan botol pada area pengisian dengan posisi yang stabil dan presisi. Setelah botol
+            terbaca oleh sensor, sistem akan mendeteksi kesiapan pengisian sehingga proses refill
+            dapat dimulai secara lebih akurat, aman, dan minim risiko kesalahan posisi.
+          </p>
+        </div>
+      </article>
 
-    <!-- 18 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/18.png" alt="Product 18" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 18 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
+      <article class="refill-guide-card">
+        <div class="refill-guide-card__number">04</div>
+        <div class="refill-guide-card__content">
+          <h3>Lihat Progress</h3>
+          <p>
+            Pantau jalannya proses refill melalui indikator LCD yang menampilkan perkembangan volume
+            isi secara real-time. Dengan begitu, Anda dapat melihat bahwa pengisian berlangsung sesuai
+            pesanan dan memastikan setiap tahap berjalan dengan jelas, transparan, dan terukur.
+          </p>
+        </div>
+      </article>
 
-    <!-- 19 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/19.png" alt="Product 19" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 19 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
-
-    <!-- 20 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/20.png" alt="Product 20" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 20 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
-
-    <!-- 21 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/21.png" alt="Product 21" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 21 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
-
-    <!-- 22 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/22.png" alt="Product 22" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 22 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
-
-    <!-- 23 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/23.png" alt="Product 23" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 23 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
-
-    <!-- 24 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/24.png" alt="Product 24" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 24 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
-
-    <!-- 25 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/25.png" alt="Product 25" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 25 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
-
-    <!-- 26 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/26.png" alt="Product 26" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 26 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
-
-    <!-- 27 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/27.png" alt="Product 27" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 27 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
-
-    <!-- 28 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/28.png" alt="Product 28" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 28 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
-
-    <!-- 29 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/29.png" alt="Product 29" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 29 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
-
-    <!-- 30 -->
-    <article class="pitem">
-      <div class="pitem__img">
-        <img src="/uploads/products/30.png" alt="Product 30" onerror="this.style.display='none'">
-      </div>
-      <div class="pitem__kicker">WOOD</div>
-      <div class="pitem__name">HMNS Example Product 30 Eau De Parfum 100 ml</div>
-      <div class="pitem__price">Rp 320,000</div>
-      <div class="pitem__brand">HMNS Perfume</div>
-    </article>
+      <article class="refill-guide-card refill-guide-card--final">
+        <div class="refill-guide-card__number">05</div>
+        <div class="refill-guide-card__content">
+          <h3>Ambil Botol</h3>
+          <p>
+            Setelah pengisian selesai, ambil kembali botol Anda dengan hati-hati dan periksa hasilnya
+            secara singkat. Pastikan volume refill telah sesuai dengan pesanan sehingga parfum siap
+            digunakan kembali, disimpan, atau dibawa pulang dalam kondisi yang rapi dan optimal.
+          </p>
+        </div>
+      </article>
+    </div>
 
   </div>
-</div>
+</section>
 </div>
 </div>
 @endsection

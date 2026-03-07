@@ -1,128 +1,415 @@
 /* =========================================
-   REFILL (HUMANS STYLE) — CLEAN
+   REFILL CATALOG — FINAL
    ========================================= */
 
 :root{
-  --adj-w: 360px;      /* lebar panel Adjustment */
-  --pad-x: 40px;       /* padding nav kiri (Purpose's start) */
-  --right-pad: 40px;   /* padding kanan (sejajar search) */
-  --card-min: 320px;   /* ukuran minimum card */
+  --adj-w: 300px;
+  --pad-x: 40px;
+  --right-pad: 40px;
 }
 
-/* wrapper khusus halaman refill */
+/* wrapper */
 .refill-page{
   width: 100%;
 }
 
-/* container katalog */
+/* area catalog */
 .refill-page .catalog{
-  max-width: none;
   width: 100%;
   margin: 0;
-  padding: 40px var(--right-pad) 90px 0;
+  padding: 22px var(--right-pad) 72px 0;
   box-sizing: border-box;
 }
 
-/* GRID: start sejajar Purpose's + lebar sampai batas kanan */
+/* grid product */
 .refill-page .catalog__grid{
   display: grid;
-  grid-template-columns: repeat(3, minmax(var(--card-min), 1fr));
-  column-gap: 120px;
-  row-gap: 80px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 96px;
+  row-gap: 72px;
   align-items: start;
 
-  /* offset supaya mulai setelah panel adjustment + padding kiri */
-  margin-left: calc(var(--adj-w) + var(--pad-x));
-  width: calc(100% - (var(--adj-w) + var(--pad-x) + var(--right-pad)));
+  /* sejajarin sama guide */
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
 /* item */
 .refill-page .pitem{
-  background: transparent;
+  width: 100%;
 }
 
-/* image frame */
+/* gambar */
 .refill-page .pitem__img{
   width: 100%;
-  height: 260px;
+  height: 220px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  margin-bottom: 6px;
+  margin-bottom: 18px;
   background: #fff;
   box-sizing: border-box;
 }
 
 .refill-page .pitem__img img{
-  width: 100%;
-  height: 100%;
+  max-width: 72%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
   display: block;
+  transition: transform .25s ease;
+}
+
+.refill-page .pitem:hover .pitem__img img{
+  transform: translateY(-3px);
 }
 
 /* text */
 .refill-page .pitem__kicker{
   font-size: 11px;
-  letter-spacing: 1px;
+  line-height: 1.2;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
+  color: #555;
   margin-bottom: 10px;
 }
 
 .refill-page .pitem__name{
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 15px;
   line-height: 1.45;
-  margin-bottom: 8px;
-  max-width: 270px;
-  word-break: normal;
-  overflow-wrap: anywhere;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 10px;
+  max-width: 280px;
+  letter-spacing: -0.01em;
 }
 
 .refill-page .pitem__price{
   font-size: 14px;
-  font-weight: 400;
+  line-height: 1.5;
+  color: #111;
   margin-bottom: 8px;
 }
 
 .refill-page .pitem__brand{
   font-size: 12px;
-  opacity: .55;
+  line-height: 1.6;
+  color: #777;
 }
 
-/* =========================
+/* =========================================
    RESPONSIVE
-   ========================= */
+   ========================================= */
 
 @media (max-width: 1100px){
+  .refill-page .catalog{
+    padding: 22px 32px 64px;
+  }
+
   .refill-page .catalog__grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 60px;
-    row-gap: 80px;
-
-    margin-left: calc(var(--adj-w) + var(--pad-x));
-    width: calc(100% - (var(--adj-w) + var(--pad-x) + var(--right-pad)));
+    column-gap: 56px;
+    row-gap: 64px;
+    max-width: 980px;
   }
 }
 
 @media (max-width: 992px){
   .refill-page .catalog{
-    padding: 24px 18px 60px;
+    padding: 20px 18px 56px;
   }
 
   .refill-page .catalog__grid{
-    margin-left: 0;
-    width: 100%;
-
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 40px;
-    row-gap: 60px;
+    column-gap: 36px;
+    row-gap: 56px;
+    max-width: 100%;
+  }
+
+  .refill-page .pitem__img{
+    height: 200px;
+    margin-bottom: 14px;
+  }
+
+  .refill-page .pitem__img img{
+    max-width: 74%;
   }
 }
 
 @media (max-width: 700px){
+  .refill-page .catalog{
+    padding: 18px 16px 48px;
+  }
+
   .refill-page .catalog__grid{
     grid-template-columns: 1fr;
-    row-gap: 50px;
+    row-gap: 44px;
   }
+
+  .refill-page .pitem__img{
+    height: 190px;
+  }
+
+  .refill-page .pitem__name{
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .refill-page .pitem__price{
+    font-size: 13px;
+  }
+
+  .refill-page .pitem__brand{
+    font-size: 12px;
+  }
+}
+
+/* =========================================
+   REFILL GUIDE — CENTERED PROPER
+   ========================================= */
+
+.refill-page .refill-guide-wide{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 56px 40px 110px;
+}
+
+.refill-page .refill-guide-wide__container{
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+/* intro */
+.refill-page .refill-guide-wide__intro{
+  max-width: 860px;
+  margin: 0 auto 44px;
+  text-align: center;
+  position: relative;
+  padding-top: 18px;
+}
+
+.refill-page .refill-guide-wide__intro::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 56px;
+  height: 2px;
+  background: #111;
+  opacity: .14;
+  transform: translateX(-50%);
+}
+
+.refill-page .refill-guide-wide__label{
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+  color: #7d7d7d;
+  margin-bottom: 14px;
+}
+
+.refill-page .refill-guide-wide__title{
+  font-size: 52px;
+  line-height: 1.02;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 18px;
+  letter-spacing: -0.04em;
+}
+
+.refill-page .refill-guide-wide__desc{
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 2;
+  color: #666;
+}
+
+/* steps */
+.refill-page .refill-guide-wide__steps{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.refill-page .refill-guide-card{
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 28px 26px;
+  min-height: 176px;
+  border: 1px solid #e7e7e7;
+  border-radius: 22px;
+  background: #fff;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.refill-page .refill-guide-card::after{
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: #111;
+  opacity: .06;
+}
+
+.refill-page .refill-guide-card:hover{
+  transform: translateY(-4px);
+  border-color: #d8d8d8;
+  box-shadow: 0 14px 30px rgba(0,0,0,.05);
+}
+
+.refill-page .refill-guide-card__number{
+  width: 46px;
+  min-width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+}
+
+.refill-page .refill-guide-card__content{
+  flex: 1;
+  min-width: 0;
+}
+
+.refill-page .refill-guide-card__content h3{
+  margin: 0 0 10px;
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+
+.refill-page .refill-guide-card__content p{
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.95;
+  color: #666;
+  max-width: 100%;
+}
+
+/* responsive */
+@media (max-width: 1100px){
+  .refill-page .refill-guide-wide__container{
+    max-width: 980px;
+  }
+
+  .refill-page .refill-guide-wide__title{
+    font-size: 42px;
+  }
+
+  .refill-page .refill-guide-wide__desc{
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 992px){
+  .refill-page .refill-guide-wide{
+    padding: 28px 18px 80px;
+  }
+
+  .refill-page .refill-guide-wide__container{
+    max-width: 100%;
+  }
+
+  .refill-page .refill-guide-wide__intro{
+    max-width: 100%;
+    margin-bottom: 28px;
+  }
+
+  .refill-page .refill-guide-wide__title{
+    font-size: 36px;
+  }
+
+  .refill-page .refill-guide-wide__desc{
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .refill-page .refill-guide-wide__steps{
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .refill-page .refill-guide-card{
+    min-height: auto;
+    padding: 22px 20px;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 700px){
+  .refill-page .refill-guide-wide{
+    padding: 18px 16px 64px;
+  }
+
+  .refill-page .refill-guide-wide__title{
+    font-size: 28px;
+    line-height: 1.1;
+  }
+
+  .refill-page .refill-guide-wide__desc{
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .refill-page .refill-guide-card{
+    padding: 18px 16px;
+    gap: 14px;
+    border-radius: 16px;
+  }
+
+  .refill-page .refill-guide-card__number{
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    font-size: 13px;
+  }
+
+  .refill-page .refill-guide-card__content h3{
+    font-size: 16px;
+  }
+
+  .refill-page .refill-guide-card__content p{
+    font-size: 12px;
+    line-height: 1.8;
+  }
+}
+
+/* =========================================
+   BOTTLE PAGE — SAME AS PARFUM
+   ========================================= */
+
+.pitem--bottle .pitem__brand{
+  display: none;
+}
+
+.pitem--bottle .pitem__price{
+  margin-bottom: 0;
+}
+
+.pitem--bottle .pitem__name{
+  max-width: 290px;
 }
