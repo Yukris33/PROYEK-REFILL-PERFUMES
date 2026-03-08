@@ -45,15 +45,49 @@
 
 
       <div class="topbar__inner">
-          <div class="topbar__left">
-              <a href="/" class="brand">Perfume Store</a>
-          </div>
+    <div class="topbar__left">
+        <a href="{{ url('/') }}" class="brand">Perfume Store</a>
+    </div>
 
-          <div class="topbar__right">
-              <a href="#" class="icon-link">👤</a>
-              <a href="#" class="icon-link">🛒 (0)</a>
-          </div>
-      </div>
+    <div class="topbar__right">
+
+        @auth
+            <div class="user-menu">
+
+                <a href="#" class="icon-link user-pill">
+
+                    @if(auth()->user()->avatar ?? false)
+                        <img 
+                            src="{{ asset('storage/' . auth()->user()->avatar) }}" 
+                            class="user-avatar"
+                        >
+                    @else
+                        <span class="user-avatar user-avatar--fallback">
+                            {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
+                        </span>
+                    @endif
+
+                </a>
+
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="logout-btn">
+                        Logout
+                    </button>
+                </form>
+
+            </div>
+        @else
+            <a href="{{ route('login') }}" class="icon-link">👤</a>
+        @endauth
+
+
+        <a href="{{ route('cart.index') }}" class="icon-link">
+            🛒 ({{ count(session('cart', [])) }})
+        </a>
+
+    </div>
+</div>
   </header>
 
   <div class="hero-slider" id="heroSlider">

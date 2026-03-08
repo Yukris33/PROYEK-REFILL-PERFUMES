@@ -9,15 +9,22 @@
       <div class="catalog__grid">
 
         <!-- 01 -->
-        <article class="pitem">
-          <div class="pitem__img">
-            <img src="{{ asset('img/peach bloom 4 (1) (1).png') }}" alt="Product 01">
-          </div>
-          <div class="pitem__kicker">Prestige</div>
-          <div class="pitem__name">SCENTC Prestige Signature Eau De Parfum</div>
-          <div class="pitem__price">15ml 30ml 50ml 100ml</div>
-          <div class="pitem__brand">Luxurious. Warm. Timeless.</div>
-        </article>
+<article class="pitem">
+  <div class="pitem__img">
+    <img src="{{ asset('img/peach bloom 4 (1) (1).png') }}" alt="SCENTC Prestige Signature Eau De Parfum">
+
+    <div class="pitem__overlay">
+      <a href="{{ route('preview.prestige') }}" class="pitem__btn">
+        Lihat Selengkapnya
+      </a>
+    </div>
+  </div>
+
+  <div class="pitem__kicker">PRESTIGE</div>
+  <div class="pitem__name">SCENTC Prestige Signature Eau De Parfum</div>
+  <div class="pitem__price">15ml 30ml 50ml 100ml</div>
+  <div class="pitem__brand">Luxurious. Warm. Timeless.</div>
+</article>
 
         <!-- 02 -->
         <article class="pitem">

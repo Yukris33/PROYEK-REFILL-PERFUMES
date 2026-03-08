@@ -208,9 +208,8 @@
     <a href="{{ route('home') }}" class="navlink">Purpose's</a>
     <a href="{{ route('nav.brand') }}" class="navlink">Brand</a>
     <a href="{{ route('products.botol') }}" class="navlink">Botol</a>
-    <a href="#" class="navlink">Place</a>
-    <a href="#" class="navlink">FAQ & Vending Mechine</a>
-    <a href="{{ route('products.refill') }}" class="navlink">PARFUM</a>
+    <a href="{{ route('vending.place') }}" class="navlink">Vending Mechine & Place</a>
+    <a href="{{ route('nav.voucher-bantuan') }}" class="navlink">VOUCHER & BANTUAN</a>
 
     <!-- SEARCH -->
     <div class="navsearch">

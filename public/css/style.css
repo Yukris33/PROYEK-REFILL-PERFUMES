@@ -369,3 +369,33 @@
   box-sizing: border-box;
 }
 
+.user-menu{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.user-avatar{
+width:32px;
+height:32px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.user-avatar--fallback{
+display:flex;
+align-items:center;
+justify-content:center;
+background:#d6b77c;
+color:white;
+font-weight:600;
+font-size:14px;
+}
+
+.logout-btn{
+border:none;
+background:none;
+cursor:pointer;
+font-size:14px;
+color:#555;
+}
