@@ -67,6 +67,15 @@ Route::get('/cart', function () {
 })->name('cart.index');
 
 Route::post('/cart/add', function (Request $request) {
+    $request->validate([
+        'product_key' => 'required',
+        'name' => 'required',
+        'image' => 'required',
+        'size' => 'required',
+        'price' => 'required|numeric|min:1',
+        'type' => 'required',
+    ]);
+
     $cart = session()->get('cart', []);
     $cartKey = $request->product_key . '_' . $request->size;
 
@@ -110,6 +119,35 @@ Route::middleware('guest')->group(function () {
 Route::post('/logout', [AuthController::class, 'logout'])
     ->middleware('auth')
     ->name('logout');
+
+Route::post('/cart/update/{key}', function (Request $request, $key) {
+    $cart = session()->get('cart', []);
+
+    if (isset($cart[$key])) {
+        $size = $request->size;
+        $price = $request->price;
+
+        if ($size && $price) {
+            $cart[$key]['size'] = $size;
+            $cart[$key]['price'] = $price;
+        }
+
+        session(['cart' => $cart]);
+    }
+
+    return redirect()->route('cart.index');
+})->name('cart.update');
+
+Route::post('/cart/delete/{key}', function ($key) {
+    $cart = session()->get('cart', []);
+
+    if (isset($cart[$key])) {
+        unset($cart[$key]);
+        session(['cart' => $cart]);
+    }
+
+    return redirect()->route('cart.index');
+})->name('cart.delete');
 
 
 //PREVIEW 
