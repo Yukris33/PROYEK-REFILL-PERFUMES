@@ -2,14 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Http\Request;
 use App\Http\Controllers\AuthController;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Password;
-
+use App\Http\Controllers\CartController;
+use App\Models\Product;
 
 Route::get('/refill', function () {
-
     $sort = request('sort', 'popular');
 
     $products = new LengthAwarePaginator([], 0, 12, 1, [
@@ -21,15 +18,14 @@ Route::get('/refill', function () {
 })->name('products.refill');
 
 Route::get('/brand', function () {
-
     $sort = request('sort', 'popular');
 
     $products = new LengthAwarePaginator([], 0, 12, 1, [
         'path' => request()->url(),
         'query' => request()->query(),
     ]);
-    return view('refill', compact('products', 'sort'));
 
+    return view('refill', compact('products', 'sort'));
 })->name('nav.brand');
 
 Route::get('/', function () {
@@ -37,7 +33,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::prefix('parfum')->group(function () {
-    require __DIR__.'/products.refill.php';
+    require __DIR__ . '/products.refill.php';
 });
 
 Route::get('/botol', function () {
@@ -59,46 +55,6 @@ Route::get('/voucher-bantuan', function () {
     return view('voucher-bantuan');
 })->name('nav.voucher-bantuan');
 
-
-
-Route::get('/cart', function () {
-    $cart = session('cart', []);
-    return view('cart', compact('cart'));
-})->name('cart.index');
-
-Route::post('/cart/add', function (Request $request) {
-    $request->validate([
-        'product_key' => 'required',
-        'name' => 'required',
-        'image' => 'required',
-        'size' => 'required',
-        'price' => 'required|numeric|min:1',
-        'type' => 'required',
-    ]);
-
-    $cart = session()->get('cart', []);
-    $cartKey = $request->product_key . '_' . $request->size;
-
-    if (isset($cart[$cartKey])) {
-        $cart[$cartKey]['qty']++;
-    } else {
-        $cart[$cartKey] = [
-            'product_key' => $request->product_key,
-            'name' => $request->name,
-            'image' => $request->image,
-            'size' => $request->size,
-            'price' => $request->price,
-            'qty' => 1,
-            'type' => $request->type,
-        ];
-    }
-
-    session(['cart' => $cart]);
-
-    return redirect()->route('cart.index');
-})->name('cart.add');
-
-
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
     Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
@@ -109,7 +65,7 @@ Route::middleware('guest')->group(function () {
     Route::get('/forgot-password', [AuthController::class, 'showForgotPassword'])->name('password.request');
     Route::post('/forgot-password', [AuthController::class, 'sendResetLink'])->name('password.email');
 
-      Route::get('/reset-password/{token}', [AuthController::class, 'showResetPassword'])
+    Route::get('/reset-password/{token}', [AuthController::class, 'showResetPassword'])
         ->name('password.reset');
 
     Route::post('/reset-password', [AuthController::class, 'resetPassword'])
@@ -120,39 +76,47 @@ Route::post('/logout', [AuthController::class, 'logout'])
     ->middleware('auth')
     ->name('logout');
 
-Route::post('/cart/update/{key}', function (Request $request, $key) {
-    $cart = session()->get('cart', []);
-
-    if (isset($cart[$key])) {
-        $size = $request->size;
-        $price = $request->price;
-
-        if ($size && $price) {
-            $cart[$key]['size'] = $size;
-            $cart[$key]['price'] = $price;
-        }
-
-        session(['cart' => $cart]);
-    }
-
-    return redirect()->route('cart.index');
-})->name('cart.update');
-
-Route::post('/cart/delete/{key}', function ($key) {
-    $cart = session()->get('cart', []);
-
-    if (isset($cart[$key])) {
-        unset($cart[$key]);
-        session(['cart' => $cart]);
-    }
-
-    return redirect()->route('cart.index');
-})->name('cart.delete');
-
-
-//PREVIEW 
-
+// PREVIEW
 Route::get('/preview/prestige', function () {
     return view('preview.prestige');
 })->name('preview.prestige');
 
+Route::get('/preview/ocean', function () {
+    return view('preview.ocean');
+})->name('preview.ocean');
+
+Route::get('/preview/midnight', function () {
+    return view('preview.midnight');
+})->name('preview.midnight');
+
+Route::get('/preview/citrus', function () {
+    return view('preview.citrus');
+})->name('preview.citrus');
+
+Route::get('/preview/velvet', function () {
+    return view('preview.velvet');
+})->name('preview.velvet');
+
+Route::get('/preview/vanilla', function () {
+    return view('preview.vanilla');
+})->name('preview.vanilla');
+
+Route::get('/preview/silver', function () {
+    return view('preview.silver');
+})->name('preview.silver');
+
+Route::get('/preview/blue', function () {
+    return view('preview.blue');
+})->name('preview.blue');
+
+Route::get('/preview/emerald', function () {
+    return view('preview.emerald');
+})->name('preview.emerald');
+
+// CART
+Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
+Route::delete('/cart/remove/{id}', [CartController::class, 'destroy'])->name('cart.remove');
+
+Route::post('/checkout/selected', [CartController::class, 'checkoutSelected'])->name('checkout.selected');

@@ -82,9 +82,30 @@
         @endauth
 
 
-        <a href="{{ route('cart.index') }}" class="icon-link">
-            🛒 ({{ count(session('cart', [])) }})
-        </a>
+        @php
+    $cartCount = 0;
+
+    if (auth()->check()) {
+        $activeCart = \App\Models\Cart::with('items')
+            ->where('user_id', auth()->id())
+            ->where('status', 'active')
+            ->first();
+    } else {
+        $activeCart = \App\Models\Cart::with('items')
+            ->whereNull('user_id')
+            ->where('session_id', session()->getId())
+            ->where('status', 'active')
+            ->first();
+    }
+
+    if ($activeCart) {
+        $cartCount = $activeCart->items->sum('qty');
+    }
+@endphp
+
+<a href="{{ route('cart.index') }}" class="icon-link">
+    🛒 ({{ $cartCount }})
+</a>
 
     </div>
 </div>

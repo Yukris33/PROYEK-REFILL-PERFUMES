@@ -27,93 +27,148 @@
 </article>
 
         <!-- 02 -->
-        <article class="pitem">
-          <div class="pitem__img">
-            <img src="{{ asset('img/ocean breeze fix.png') }}" alt="Product 02">
-          </div>
-          <div class="pitem__kicker">Aquatic Fresh</div>
-          <div class="pitem__name">SCENTC Ocean Breeze Aqua Eau De Parfum</div>
-          <div class="pitem__price">20ml 30ml 50ml 100ml</div>
-          <div class="pitem__brand">Fresh. Clean. Invigorating.</div>
-        </article>
+<article class="pitem">
+  <div class="pitem__img">
+    <img src="{{ asset('img/ocean breeze fix.png') }}" alt="SCENTC Ocean Breeze Aqua Eau De Parfum">
 
-        <!-- 03 -->
-        <article class="pitem">
-          <div class="pitem__img">
-            <img src="{{ asset('img/midnight.png') }}" alt="Product 03">
-          </div>
-          <div class="pitem__kicker">Woody Oud</div>
-          <div class="pitem__name">SCENTC Midnight Oud Intense Eau De Parfum</div>
-          <div class="pitem__price">20ml 50ml 100ml</div>
-          <div class="pitem__brand">Dark. Bold. Intense.</div>
-        </article>
+    <div class="pitem__overlay">
+      <a href="{{ route('preview.ocean') }}" class="pitem__btn">
+        Lihat Selengkapnya
+      </a>
+    </div>
+  </div>
+
+  <div class="pitem__kicker">AQUATIC FRESH</div>
+  <div class="pitem__name">SCENTC Ocean Breeze Aqua Eau De Parfum</div>
+  <div class="pitem__price">20ml 30ml 50ml 100ml</div>
+  <div class="pitem__brand">Fresh. Clean. Invigorating.</div>
+</article>
+
+
+        <!-- 02 -->
+      <article class="pitem">
+  <div class="pitem__img">
+    <img src="{{ asset('img/midnight.png') }}" alt="SCENTC Midnight Oud Intense Eau De Parfum">
+
+    <div class="pitem__overlay">
+      <a href="{{ route('preview.midnight') }}" class="pitem__btn">
+        Lihat Selengkapnya
+      </a>
+    </div>
+  </div>
+
+  <div class="pitem__kicker">WOODY OUD</div>
+  <div class="pitem__name">SCENTC Midnight Oud Intense Eau De Parfum</div>
+  <div class="pitem__price">20ml 50ml 100ml</div>
+  <div class="pitem__brand">Dark. Bold. Intense.</div>
+</article>
 
         <!-- 04 -->
         <article class="pitem">
-          <div class="pitem__img">
-            <img src="{{ asset('img/citrus.png') }}" alt="Product 04">
-          </div>
-          <div class="pitem__kicker">Citrus Fresh</div>
-          <div class="pitem__name">SCENTC Citrus Aura Fresh Eau De Cologne</div>
-          <div class="pitem__price">10ml 30ml 50ml 70ml</div>
-          <div class="pitem__brand">Bright. Crisp. Energizing.</div>
-        </article>
+  <div class="pitem__img">
+    <img src="{{ asset('img/citrus.png') }}" alt="SCENTC Citrus Aura Fresh Eau De Cologne">
+
+    <div class="pitem__overlay">
+      <a href="{{ route('preview.citrus') }}" class="pitem__btn">
+        Lihat Selengkapnya
+      </a>
+    </div>
+  </div>
+
+  <div class="pitem__kicker">CITRUS FRESH</div>
+  <div class="pitem__name">SCENTC Citrus Aura Fresh Eau De Cologne</div>
+  <div class="pitem__price">10ml 30ml 50ml 70ml</div>
+  <div class="pitem__brand">Bright. Crisp. Energizing.</div>
+</article>
 
         <!-- 05 -->
         <article class="pitem">
-          <div class="pitem__img">
-            <img src="{{ asset('img/velvet1.png') }}" alt="Product 05">
-          </div>
-          <div class="pitem__kicker">Floral Elegant</div>
-          <div class="pitem__name">SCENTC Velvet Bloom Eau De Toilette</div>
-          <div class="pitem__price">20ml 50ml 70ml</div>
-          <div class="pitem__brand">Soft. Elegant. Timeless.</div>
-        </article>
+  <div class="pitem__img">
+    <img src="{{ asset('img/velvet1.png') }}" alt="SCENTC Velvet Bloom Eau De Toilette">
+
+    <div class="pitem__overlay">
+      <a href="{{ route('preview.velvet') }}" class="pitem__btn">
+        Lihat Selengkapnya
+      </a>
+    </div>
+  </div>
+
+  <div class="pitem__kicker">FLORAL ELEGANT</div>
+  <div class="pitem__name">SCENTC Velvet Bloom Eau De Toilette</div>
+  <div class="pitem__price">20ml 50ml 70ml</div>
+  <div class="pitem__brand">Soft. Elegant. Timeless.</div>
+</article>
 
         <!-- 06 -->
         <article class="pitem">
-          <div class="pitem__img">
-            <img src="{{ asset('img/vanila.png') }}" alt="Product 06">
-          </div>
-          <div class="pitem__kicker">GOURMAND WARM</div>
-          <div class="pitem__name">SCENTC Vannila Suede Eau De Parfum 100 ml</div>
-          <div class="pitem__price">10ml 30ml 50ml 70ml</div>
-          <div class="pitem__brand">Warm. Creamy. Addictive.</div>
-        </article>
+  <div class="pitem__img">
+    <img src="{{ asset('img/vanila.png') }}" alt="SCENTC Vanilla Suede Eau De Parfum">
+
+    <div class="pitem__overlay">
+      <a href="{{ route('preview.vanilla') }}" class="pitem__btn">
+        Lihat Selengkapnya
+      </a>
+    </div>
+  </div>
+
+  <div class="pitem__kicker">GOURMAND WARM</div>
+  <div class="pitem__name">SCENTC Vanilla Suede Eau De Parfum</div>
+  <div class="pitem__price">10ml 30ml 50ml 70ml</div>
+  <div class="pitem__brand">Warm. Creamy. Addictive.</div>
+</article>
 
         <!-- 07 -->
-        <article class="pitem">
-          <div class="pitem__img">
-            <img src="{{ asset('img/silver2.png') }}" alt="Product 07">
-          </div>
-          <div class="pitem__kicker">WOOD FRESH</div>
-          <div class="pitem__name">SCENTC Silver Mist Eau De Toilette</div>
-          <div class="pitem__price">10ml 20ml 25ml 30ml</div>
-          <div class="pitem__brand">Cool. Clean. Modern.</div>
-        </article>
+      <article class="pitem">
+  <div class="pitem__img">
+    <img src="{{ asset('img/silver2.png') }}" alt="SCENTC Silver Mist Eau De Toilette">
 
+    <div class="pitem__overlay">
+      <a href="{{ route('preview.silver') }}" class="pitem__btn">
+        Lihat Selengkapnya
+      </a>
+    </div>
+  </div>
+
+  <div class="pitem__kicker">WOODY FRESH</div>
+  <div class="pitem__name">SCENTC Silver Mist Eau De Toilette</div>
+  <div class="pitem__price">10ml 20ml 25ml 30ml</div>
+  <div class="pitem__brand">Cool. Clean. Modern.</div>
+</article>
         <!-- 08 -->
         <article class="pitem">
-          <div class="pitem__img">
-            <img src="{{ asset('img/blue.png') }}" alt="Product 08">
-          </div>
-          <div class="pitem__kicker">CITRUS WOOD</div>
-          <div class="pitem__name">SCENTC Blue Neroli Eau De Toilette</div>
-          <div class="pitem__price">20ml 25ml 30ml</div>
-          <div class="pitem__brand">Fresh. Bright. Airy.</div>
-        </article>
+  <div class="pitem__img">
+    <img src="{{ asset('img/blue.png') }}" alt="SCENTC Blue Neroli Eau De Toilette">
+
+    <div class="pitem__overlay">
+      <a href="{{ route('preview.blue') }}" class="pitem__btn">
+        Lihat Selengkapnya
+      </a>
+    </div>
+  </div>
+
+  <div class="pitem__kicker">CITRUS WOOD</div>
+  <div class="pitem__name">SCENTC Blue Neroli Eau De Toilette</div>
+  <div class="pitem__price">20ml 25ml 30ml</div>
+  <div class="pitem__brand">Fresh. Bright. Airy.</div>
+</article>
 
         <!-- 09 -->
         <article class="pitem">
-          <div class="pitem__img">
-            <img src="{{ asset('img/green.jpeg') }}" alt="Product 09">
-          </div>
-          <div class="pitem__kicker">WOOD INTENSE</div>
-          <div class="pitem__name">SCENTC Emerald Cedar Eau De Parfum</div>
-          <div class="pitem__price">10ml 20ml 30ml</div>
-          <div class="pitem__brand">Deep. Smooth. Sophisticated.</div>
-        </article>
+  <div class="pitem__img">
+    <img src="{{ asset('img/green.jpeg') }}" alt="SCENTC Emerald Cedar Eau De Parfum">
 
+    <div class="pitem__overlay">
+      <a href="{{ route('preview.emerald') }}" class="pitem__btn">
+        Lihat Selengkapnya
+      </a>
+    </div>
+  </div>
+
+  <div class="pitem__kicker">WOOD INTENSE</div>
+  <div class="pitem__name">SCENTC Emerald Cedar Eau De Parfum</div>
+  <div class="pitem__price">10ml 20ml 30ml</div>
+  <div class="pitem__brand">Deep. Smooth. Sophisticated.</div>
+</article>
       </div>
     </div>
 
