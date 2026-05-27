@@ -32,4 +32,29 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function reviews()
+    {
+        return $this->hasMany(ProductReview::class, 'user_id');
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'user_id');
+    }
+
+    public function userVouchers()
+    {
+        return $this->hasMany(UserVoucher::class, 'user_id');
+    }
+
+    public function supportTickets()
+    {
+        return $this->hasMany(SupportTicket::class, 'user_id');
+    }
+
+    public function pointTransactions()
+    {
+        return $this->hasMany(PointTransaction::class, 'user_id');
+    }
 }

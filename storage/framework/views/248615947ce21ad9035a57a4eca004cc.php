@@ -162,7 +162,7 @@ Rp<?php echo e(number_format($grandTotal,0,',','.')); ?>
 </div>
 
 
-<a href="#" class="checkout-btn">
+<a href="<?php echo e(route('checkout.show')); ?>" class="checkout-btn">
 Checkout
 </a>
 

@@ -89,20 +89,56 @@ unset($__errorArgs, $__bag); ?>
     <div class="shield-icon"><i class="bi bi-shield-lock"></i></div>
     <h3>Login as Admin</h3>
 
-    <form action="#" method="POST" class="auth-form admin-form">
-        <?php echo csrf_field(); ?>
+    <form action="<?php echo e(route('admin.login.submit')); ?>" method="POST" class="auth-form admin-form">
+    <?php echo csrf_field(); ?>
 
-        <label>Admin ID</label>
-        <input type="text" name="admin_id" placeholder="Enter admin ID">
+    <label>Email Admin</label>
+    <div class="input-wrap">
+        <input
+            type="email"
+            name="admin_email"
+            value="<?php echo e(old('admin_email')); ?>"
+            placeholder="admin@example.com"
+            required
+        >
+        <i class="bi bi-person-badge"></i>
+    </div>
+    <?php $__errorArgs = ['admin_email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+        <small class="error-text"><?php echo e($message); ?></small>
+    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
 
-        <label>Password</label>
-        <div class="input-wrap">
-            <input type="password" name="admin_password" placeholder="••••••••">
-            <i class="bi bi-lock"></i>
-        </div>
+    <label>Password</label>
+    <div class="input-wrap">
+        <input
+            type="password"
+            name="admin_password"
+            placeholder="••••••••"
+            required
+        >
+        <i class="bi bi-lock"></i>
+    </div>
+    <?php $__errorArgs = ['admin_password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+        <small class="error-text"><?php echo e($message); ?></small>
+    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
 
-        <button type="submit" class="btn-auth btn-admin">Admin Login</button>
-    </form>
+    <button type="submit" class="btn-auth btn-admin">
+        Admin Login
+    </button>
+</form>
 </aside>
         </div>
     </div>

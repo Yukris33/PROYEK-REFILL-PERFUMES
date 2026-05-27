@@ -4,10 +4,7 @@
   --right-pad: 40px;   /* sejajar search kanan */
 }
 
-#app-content.pjax-loading {
-  pointer-events: none;
-  opacity: .6;
-}
+
 
 /* ====== PROMO BAR (HITAM) ====== */
 .promo-bar {
@@ -172,16 +169,77 @@
     opacity: 0.6;
 }
 
-/* search tetap kanan */
-.navsearch {
+/* =========================================
+   STEP 6 FINAL - SEARCH RESPONSIVE FIX
+   Search full row di responsive + icon masuk input
+========================================= */
+
+/* Desktop tetap kanan seperti desain awal */
+@media (min-width: 901px) {
+  .navsearch {
     position: absolute;
     right: 40px;
+  }
+
+  .navsearch__input {
+    border: 1px solid #000;
+    padding: 8px 46px 8px 14px;
+    width: 200px;
+    box-sizing: border-box;
+  }
+
+  .navsearch__icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    font-size: 18px;
+    color: #111;
+    pointer-events: none;
+  }
 }
 
-.navsearch__input {
+/* Responsive: search jadi satu baris penuh */
+@media (max-width: 900px) {
+  .navsearch {
+    position: relative !important;
+    right: auto !important;
+    order: 3;
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+
+  .navsearch__input {
+    display: block;
+    width: 100% !important;
+    min-height: 48px;
+    box-sizing: border-box;
     border: 1px solid #000;
-    padding: 8px 14px;
-    width: 200px;
+    padding: 0 48px 0 16px;
+    font-size: 15px;
+  }
+
+  .navsearch__icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    font-size: 18px;
+    color: #111;
+    pointer-events: none;
+  }
+}
+
+
+@media (max-width: 560px) {
+  .navsearch {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+  }
 }
 
 /* FLAG LANG SWTICH*/
@@ -337,12 +395,7 @@
   z-index: 9999;
 }
 
-#app-content { will-change: transform, opacity; }
-.pjax-anim { transition: opacity .22s ease, transform .22s ease; }
-.pjax-out-left  { opacity: 0; transform: translateX(-18px); }
-.pjax-out-right { opacity: 0; transform: translateX( 18px); }
-.pjax-in-from-right { opacity: 0; transform: translateX( 18px); }
-.pjax-in-from-left  { opacity: 0; transform: translateX(-18px); }
+
 
 
 /* Pastikan nav jadi anchor positioning */
@@ -398,4 +451,752 @@ background:none;
 cursor:pointer;
 font-size:14px;
 color:#555;
+}
+
+
+/* =========================================
+   NAV HISTORY - ABSOLUTE POSITION FIX
+   History nempel Adjustment, menu lain tidak ikut geser
+   ========================================= */
+
+.mainnav__inner{
+  position: relative !important;
+}
+
+.navlink-history{
+  position: absolute !important;
+  left: 195px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+
+  margin: 0 !important;
+  min-height: 36px;
+  padding: 0 18px;
+  border-radius: 999px;
+
+  background: #111;
+  color: #fff !important;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  box-shadow: 0 12px 28px rgba(0,0,0,.14);
+  transition: box-shadow .22s ease, background .22s ease;
+}
+
+.navlink-history:hover{
+  background: #1f1f1f;
+  box-shadow: 0 18px 38px rgba(0,0,0,.18);
+}
+
+/* =========================================
+   PREMIUM NAV LINKS + PERFUME SPRAY EFFECT
+   ========================================= */
+
+/* History tetap di sebelah Adjustment, tapi bukan badge hitam */
+.navlink-history{
+  position: absolute !important;
+  left: 195px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+
+  min-height: 38px;
+  padding: 0 12px;
+  margin: 0 !important;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent !important;
+  color: #111 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  overflow: visible;
+}
+
+.navlink-history::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 3px;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, #111, transparent);
+  transform: translateX(-50%);
+  transition: width .28s ease;
+}
+
+.navlink-history:hover::after{
+  width: 100%;
+}
+
+.navlink-history:hover{
+  color: #000 !important;
+  transform: translateY(-50%) translateY(-1px);
+}
+
+/* 5 nav utama jadi badge premium */
+.navlink-main{
+  position: relative;
+  min-height: 38px;
+  padding: 0 18px !important;
+
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.09);
+  background:
+    radial-gradient(circle at top right, rgba(232,176,116,.16), transparent 38%),
+    rgba(255,255,255,.76);
+
+  color: #111 !important;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.9),
+    0 12px 28px rgba(0,0,0,.045);
+
+  overflow: hidden;
+  transition:
+    transform .24s ease,
+    box-shadow .24s ease,
+    border-color .24s ease,
+    background .24s ease;
+}
+
+.navlink-main::before{
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle, rgba(255,255,255,.95) 0 8%, transparent 9%),
+    radial-gradient(circle, rgba(232,176,116,.32) 0 7%, transparent 8%),
+    radial-gradient(circle, rgba(31,157,89,.20) 0 6%, transparent 7%);
+  background-size: 42px 42px, 58px 58px, 74px 74px;
+  opacity: 0;
+  transform: translateX(-35%) rotate(-12deg);
+  transition: opacity .28s ease, transform .45s ease;
+  pointer-events: none;
+}
+
+.navlink-main:hover{
+  transform: translateY(-2px);
+  border-color: rgba(0,0,0,.16);
+  background:
+    radial-gradient(circle at top right, rgba(232,176,116,.22), transparent 38%),
+    rgba(255,255,255,.92);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.95),
+    0 18px 40px rgba(0,0,0,.10);
+}
+
+.navlink-main:hover::before{
+  opacity: .8;
+  transform: translateX(18%) rotate(-12deg);
+}
+
+/* efek klik spray */
+.nav-spray{
+  position: relative;
+}
+
+.nav-spray-particle{
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 999999;
+  background: rgba(232,176,116,.85);
+  box-shadow:
+    0 0 12px rgba(232,176,116,.55),
+    0 0 20px rgba(255,255,255,.8);
+  animation: navPerfumeSpray .72s ease-out forwards;
+}
+
+.nav-spray-particle:nth-child(2n){
+  background: rgba(255,255,255,.92);
+}
+
+.nav-spray-particle:nth-child(3n){
+  background: rgba(31,157,89,.45);
+}
+
+@keyframes navPerfumeSpray{
+  0%{
+    opacity: 1;
+    transform: translate(0,0) scale(.8);
+    filter: blur(0);
+  }
+
+  70%{
+    opacity: .75;
+    filter: blur(.5px);
+  }
+
+  100%{
+    opacity: 0;
+    transform: translate(var(--spray-x), var(--spray-y)) scale(0);
+    filter: blur(2px);
+  }
+}
+
+/* Kalau history terlalu jauh/deket, adjust angka left ini saja */
+@media (max-width: 900px){
+  .navlink-history{
+    position: static !important;
+    transform: none !important;
+  }
+}
+
+/* =========================
+   RESPONSIVE HERO BANNER
+========================= */
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 220px;
+  }
+
+  .hero-slide img {
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .hero-prev,
+  .hero-next {
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+  }
+
+  .hero-prev {
+    left: 12px;
+  }
+
+  .hero-next {
+    right: 12px;
+  }
+}
+
+  /* =========================================
+   RESPONSIVE TOPBAR / HEADER PUTIH
+   Biar layout ikut mengecil dan tidak numpuk
+========================================= */
+
+@media (max-width: 900px) {
+  .topbar {
+    padding: 0;
+  }
+
+  .topbar__lang {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 16px 0;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .topbar__inner {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 16px 14px;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .topbar__left {
+    position: static;
+    left: auto;
+    transform: none;
+
+    min-width: 0;
+  }
+
+  .brand {
+    display: block;
+    max-width: 100%;
+    font-size: clamp(24px, 6vw, 36px);
+    letter-spacing: clamp(1px, .8vw, 4px);
+    line-height: 1.1;
+    white-space: normal;
+    word-break: normal;
+  }
+
+  .topbar__right {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .icon-link {
+    white-space: nowrap;
+  }
+
+  .user-menu {
+    gap: 8px;
+  }
+
+  .logout-btn {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar__inner {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .topbar__left {
+    text-align: center;
+  }
+
+  .topbar__right {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .topbar__lang {
+    justify-content: center;
+  }
+
+  .brand {
+    font-size: clamp(22px, 9vw, 32px);
+    text-align: center;
+  }
+}
+
+/* =========================================
+   RESPONSIVE MAIN NAVBAR
+   Adjustment, History, menu utama, search
+========================================= */
+
+@media (max-width: 900px) {
+  .mainnav__inner {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 14px 16px !important;
+    box-sizing: border-box;
+  }
+
+  .adjwrap {
+    position: relative;
+    order: 1;
+    flex: 0 0 auto;
+  }
+
+  .navadjustment {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+
+    min-height: 40px;
+    padding: 0 14px;
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 999px;
+    background: #fff;
+    white-space: nowrap;
+  }
+
+  .navlink-history {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+
+    order: 2;
+    min-height: 40px;
+    padding: 0 14px !important;
+    display: inline-flex !important;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .navsearch {
+    position: static !important;
+    right: auto !important;
+
+    order: 3;
+    flex: 1 1 220px;
+    min-width: 180px;
+  }
+
+  .navsearch__input {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .navlink-main {
+    order: 4;
+    margin: 0 !important;
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .adjpanel {
+    left: 0 !important;
+    right: auto !important;
+    width: min(360px, calc(100vw - 32px)) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .mainnav__inner {
+    gap: 10px !important;
+  }
+
+  .navsearch {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+
+  .navlink-main {
+    flex: 1 1 calc(50% - 5px);
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .navlink-main {
+    flex: 1 1 100%;
+  }
+}
+
+/* =========================================
+   ADJUSTMENT FILTER - REFILL PRODUCT
+========================================= */
+
+.adjchips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.adjchip {
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  background: #fff;
+  color: #111;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .18s ease;
+}
+
+.adjchip:hover {
+  background: #f4f4f4;
+}
+
+.adjchip.is-active {
+  background: #111;
+  border-color: #111;
+  color: #fff;
+}
+
+.adjfilter-note {
+  width: 100%;
+  margin-bottom: 12px;
+  color: #777;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.adjpanel__foot {
+  position: sticky;
+  bottom: 0;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 14px;
+  background: #fff;
+}
+
+.adjbtn {
+  min-height: 42px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.adjbtn--ghost {
+  background: #fff;
+  color: #111;
+}
+
+.adjbtn--primary {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.catalog-filter-empty {
+  margin-top: 28px;
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  text-align: center;
+  color: #777;
+  border: 1px dashed #ddd;
+  border-radius: 24px;
+  background: #fafafa;
+}
+
+.catalog-filter-empty i {
+  font-size: 34px;
+  color: #111;
+}
+
+.catalog-filter-empty strong {
+  color: #111;
+  font-size: 18px;
+}
+
+.catalog-filter-empty span {
+  font-size: 14px;
+}
+
+/* =========================================
+   GLOBAL QUICK FINDER SEARCH
+========================================= */
+
+/* Desktop: search tetap nempel kanan seperti desain awal */
+@media (min-width: 901px) {
+  .navsearch {
+    position: absolute !important;
+    right: 40px !important;
+  }
+}
+
+/* Mobile/responsive: search tetap ikut layout responsive */
+@media (max-width: 900px) {
+  .navsearch {
+    position: relative !important;
+  }
+}
+
+.navsearch-results {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 430px;
+  max-height: min(520px, calc(100vh - 180px));
+  overflow-y: auto;
+  z-index: 99999;
+  padding: 14px;
+  border: 1px solid rgba(17,17,17,.10);
+  border-radius: 24px;
+  background: rgba(255,255,255,.98);
+  box-shadow: 0 28px 70px rgba(0,0,0,.16);
+}
+
+.navsearch-results__head {
+  margin-bottom: 12px;
+  padding: 2px 4px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(17,17,17,.08);
+}
+
+.navsearch-results__head span {
+  color: #111;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.navsearch-results__head small {
+  color: #777;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.navsearch-results__list {
+  display: grid;
+  gap: 10px;
+}
+
+.navsearch-result-item {
+  min-height: 82px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 48px 1fr 22px;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(17,17,17,.08);
+  border-radius: 20px;
+  background: #fcfbf8;
+  color: #111;
+  text-decoration: none;
+  transition:
+    transform .18s ease,
+    border-color .18s ease,
+    background .18s ease,
+    box-shadow .18s ease;
+}
+
+.navsearch-result-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(17,17,17,.18);
+  background: #fff;
+  box-shadow: 0 16px 30px rgba(0,0,0,.08);
+}
+
+.navsearch-result-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #111;
+  color: #fff;
+  font-size: 20px;
+}
+
+.navsearch-result-copy small,
+.navsearch-result-copy strong,
+.navsearch-result-copy em {
+  display: block;
+}
+
+.navsearch-result-copy small {
+  margin-bottom: 4px;
+  color: #8a847b;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+}
+
+.navsearch-result-copy strong {
+  margin-bottom: 4px;
+  color: #111;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.navsearch-result-copy em {
+  color: #666;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.45;
+}
+
+.navsearch-result-arrow {
+  color: #777;
+  font-size: 16px;
+}
+
+.navsearch-empty {
+  min-height: 160px;
+  display: grid;
+  place-items: center;
+  gap: 7px;
+  padding: 18px;
+  text-align: center;
+  border: 1px dashed rgba(17,17,17,.15);
+  border-radius: 20px;
+  background: #fcfbf8;
+  color: #777;
+}
+
+.navsearch-empty i {
+  color: #111;
+  font-size: 30px;
+}
+
+.navsearch-empty strong {
+  color: #111;
+  font-size: 16px;
+}
+
+.navsearch-empty span {
+  max-width: 290px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .navsearch-results {
+    left: 0;
+    right: auto;
+    width: min(430px, calc(100vw - 32px));
+  }
+}
+
+@media (max-width: 560px) {
+  .navsearch-results {
+    width: calc(100vw - 32px);
+  }
+
+  .navsearch-result-item {
+    grid-template-columns: 42px 1fr;
+  }
+
+  .navsearch-result-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    font-size: 18px;
+  }
+
+  .navsearch-result-arrow {
+    display: none;
+  }
 }

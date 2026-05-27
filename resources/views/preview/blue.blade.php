@@ -4,9 +4,9 @@
 
 @section('content')
 <div data-page-css="{{ asset('css/main.css') }}"></div>
-<link rel="stylesheet" href="{{ asset('css/preview-product.css') }}">
 
-<section class="preview-page" data-page="prestige-preview">
+
+<section class="preview-page" data-page="blue-preview">
     <div class="preview-wrap">
         <div class="preview-grid">
 
@@ -51,6 +51,7 @@
                         <span class="label">Character</span>
                         <strong>Fresh · Bright · Airy</strong>
                     </div>
+
                     <div class="preview-note-item">
                         <span class="label">Category</span>
                         <strong>Eau De Toilette</strong>
@@ -70,22 +71,49 @@
                     <input type="hidden" name="price" id="cartPriceInput">
 
                     <div class="preview-size-block">
-                        <label for="sizeSelect" class="preview-size-label">Pilih Ukuran</label>
+    <label for="sizeSelect" class="preview-size-label">Pilih Ukuran</label>
 
-                        <div class="preview-select-wrm">
-                            <select id="sizeSelect" name="size" class="preview-select" required>
-                                <option value="">-- Pilih ukuran ml --</option>
-                                <option value="20" data-price="35000">20 ml</option>
-                                <option value="25" data-price="45000">25 ml</option>
-                                <option value="30" data-price="55000">30 ml</option>
-                            </select>
-                        </div>
-                    </div>
+    <div class="preview-select-wrap">
+        <select id="sizeSelect" name="size" class="preview-select" required>
+            <option value="">-- Pilih ukuran ml --</option>
+            <option value="20" data-price="35000">20 ml</option>
+            <option value="25" data-price="45000">25 ml</option>
+            <option value="30" data-price="55000">30 ml</option>
+        </select>
+    </div>
+</div>
 
-                    <div class="preview-price-box">
-                        <span class="preview-price-label">Harga</span>
-                        <div class="preview-price-value" id="priceText">Pilih ukuran dulu</div>
-                    </div>
+<div class="preview-branch-block">
+    <label class="preview-branch-label">Pilih Cabang Mesin</label>
+
+    <input type="hidden" name="branch_location" id="branchLocationInput" value="UMN">
+
+    <div class="preview-branch-options">
+        <button type="button" class="preview-branch-btn is-active" data-branch="UMN">
+            <span class="branch-flag">🏫</span>
+            <span>UMN</span>
+        </button>
+
+        <button type="button" class="preview-branch-btn" data-branch="Summarecon Mall Serpong">
+            <span class="branch-flag">🛍️</span>
+            <span>SMS</span>
+        </button>
+
+        <button type="button" class="preview-branch-btn" data-branch="AEON Mall BSD">
+            <span class="branch-flag">🇯🇵</span>
+            <span>AEON BSD</span>
+        </button>
+    </div>
+
+    <div class="preview-branch-detail" id="branchDetailText">
+        Mesin dipilih: <strong>UMN</strong> — Jl. Scientia Boulevard, Gading Serpong.
+    </div>
+</div>
+
+<div class="preview-price-box">
+    <span class="preview-price-label">Harga</span>
+    <div class="preview-price-value" id="priceText">Pilih ukuran dulu</div>
+</div>
 
                     <div class="preview-actions">
                         <a href="{{ route('nav.brand') }}" class="preview-btn preview-btn--ghost">
@@ -96,7 +124,12 @@
                             Masukkan Keranjang
                         </button>
 
-                        <button type="button" class="preview-btn preview-btn--primary" id="buyNowBtn">
+                        <button
+                            type="submit"
+                            class="preview-btn preview-btn--primary"
+                            name="buy_now"
+                            value="1"
+                        >
                             Beli Sekarang
                         </button>
                     </div>
@@ -107,60 +140,77 @@
     </div>
 </section>
 
-<div class="payment-modal" id="paymentModal" style="display:none;">
-    <div class="payment-modal__box">
-        <button type="button" class="payment-modal__close" id="closePaymentModal">&times;</button>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const sizeSelect = document.getElementById('sizeSelect');
+    const priceText = document.getElementById('priceText');
+    const cartPriceInput = document.getElementById('cartPriceInput');
+    const addToCartForm = document.getElementById('addToCartForm');
 
-        <div class="payment-modal__header">
-            <h2>Pilih Metode Pembayaran</h2>
-            <p>Selesaikan pembelian tanpa pindah halaman.</p>
-        </div>
+    const branchButtons = document.querySelectorAll('.preview-branch-btn');
+    const branchLocationInput = document.getElementById('branchLocationInput');
+    const branchDetailText = document.getElementById('branchDetailText');
 
-        <div class="payment-modal__content">
-            <div class="payment-modal__left">
-                <div class="payment-card">
-                    <div class="payment-card__title">QRIS</div>
-                    <div class="payment-card__subtitle">Scan QR untuk bayar</div>
+    const branchDetails = {
+        'UMN': 'Mesin dipilih: <strong>UMN</strong> — Jl. Scientia Boulevard, Gading Serpong.',
+        'Summarecon Mall Serpong': 'Mesin dipilih: <strong>SMS</strong> — Summarecon Mall Serpong, Gading Serpong.',
+        'AEON Mall BSD': 'Mesin dipilih: <strong>AEON BSD</strong> — AEON Mall BSD City, Tangerang Selatan.'
+    };
 
-                    <div class="payment-qris-box">
-                        <div class="payment-qris-placeholder">QRIS Preview</div>
-                    </div>
+    function formatRupiah(value) {
+        return 'Rp' + new Intl.NumberFormat('id-ID').format(Number(value));
+    }
 
-                    <div class="payment-card__note">
-                        Total:
-                        <strong id="paymentTotalText">Rp0</strong>
-                    </div>
-                </div>
-            </div>
+    function updatePrice() {
+        if (!sizeSelect || !priceText || !cartPriceInput) return;
 
-            <div class="payment-modal__right">
-                <div class="payment-card">
-                    <div class="payment-card__title">Metode Lain</div>
-                    <div class="payment-card__subtitle">Pilih pembayaran yang kamu mau</div>
+        const selectedOption = sizeSelect.options[sizeSelect.selectedIndex];
+        const price = selectedOption ? selectedOption.getAttribute('data-price') : '';
 
-                    <div class="payment-method-list">
-                        <button type="button" class="payment-method-btn" data-method="Virtual Account BCA">Virtual Account BCA</button>
-                        <button type="button" class="payment-method-btn" data-method="Virtual Account BNI">Virtual Account BNI</button>
-                        <button type="button" class="payment-method-btn" data-method="Virtual Account Mandiri">Virtual Account Mandiri</button>
-                        <button type="button" class="payment-method-btn" data-method="GoPay">GoPay</button>
-                        <button type="button" class="payment-method-btn" data-method="ShopeePay">ShopeePay</button>
-                        <button type="button" class="payment-method-btn" data-method="DANA">DANA</button>
-                    </div>
+        if (sizeSelect.value && price) {
+            priceText.textContent = formatRupiah(price);
+            cartPriceInput.value = price;
+        } else {
+            priceText.textContent = 'Pilih ukuran dulu';
+            cartPriceInput.value = '';
+        }
+    }
 
-                    <div class="payment-method-detail" id="paymentMethodDetail">
-                        Pilih metode pembayaran dulu.
-                    </div>
+    if (sizeSelect) {
+        sizeSelect.addEventListener('change', updatePrice);
+        updatePrice();
+    }
 
-                    <div class="payment-card__footer">
-                        <button type="button" class="payment-confirm-btn" id="confirmPaymentBtn">
-                            Konfirmasi Pembayaran
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    branchButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            branchButtons.forEach(function (item) {
+                item.classList.remove('is-active');
+            });
 
-<script src="{{ asset('js/preview-product.js') }}"></script>
+            this.classList.add('is-active');
+
+            const branch = this.dataset.branch;
+            branchLocationInput.value = branch;
+            branchDetailText.innerHTML = branchDetails[branch] || branch;
+        });
+    });
+
+    if (addToCartForm) {
+        addToCartForm.addEventListener('submit', function (e) {
+            updatePrice();
+
+            if (!sizeSelect.value || !cartPriceInput.value) {
+                e.preventDefault();
+                alert('Pilih ukuran dulu sebelum melanjutkan.');
+                return;
+            }
+
+            if (!branchLocationInput.value) {
+                e.preventDefault();
+                alert('Pilih cabang mesin dulu sebelum melanjutkan.');
+            }
+        });
+    }
+});
+</script>
 @endsection

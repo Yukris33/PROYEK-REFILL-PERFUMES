@@ -1,9 +1,3 @@
-<head>
-  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
-</head>
-
-<body>
 
   <div class="promo-bar">
       <button class="promo-prev" type="button">‹</button>
@@ -129,6 +123,10 @@
           <img src="{{ asset('img/oullu.jpeg') }}" alt="Banner 3">
         </div>
 
+        <div class="hero-slide">
+          <img src="{{ asset('img/collab1.jpeg') }}" alt="Banner 4">
+        </div>
+
       </div>
     </div>
 
@@ -180,4 +178,3 @@
   })();
   </script>
 
-</body>

@@ -3,13 +3,18 @@
 <?php $__env->startSection('title', 'Refill Parfum'); ?>
 
 <?php $__env->startSection('content'); ?>
-<div data-page-css="<?php echo e(asset('css/main.css?v=101')); ?>"></div>
+<div data-page-css="<?php echo e(asset('css/main.css?v=102')); ?>"></div>
   <div class="refill-page">
     <div class="catalog">
       <div class="catalog__grid">
 
+      
+
         <!-- 01 -->
-<article class="pitem">
+<article class="pitem"
+  data-category="edp"
+  data-sizes="15ml|30ml|50ml|100ml"
+  data-aromas="warm">
   <div class="pitem__img">
     <img src="<?php echo e(asset('img/peach bloom 4 (1) (1).png')); ?>" alt="SCENTC Prestige Signature Eau De Parfum">
 
@@ -27,7 +32,10 @@
 </article>
 
         <!-- 02 -->
-<article class="pitem">
+<article class="pitem"
+  data-category="edp"
+  data-sizes="20ml|30ml|50ml|100ml"
+  data-aromas="fresh|aquatic">
   <div class="pitem__img">
     <img src="<?php echo e(asset('img/ocean breeze fix.png')); ?>" alt="SCENTC Ocean Breeze Aqua Eau De Parfum">
 
@@ -46,7 +54,10 @@
 
 
         <!-- 02 -->
-      <article class="pitem">
+      <article class="pitem"
+  data-category="edp"
+  data-sizes="20ml|50ml|100ml"
+  data-aromas="woody|warm">
   <div class="pitem__img">
     <img src="<?php echo e(asset('img/midnight.png')); ?>" alt="SCENTC Midnight Oud Intense Eau De Parfum">
 
@@ -64,7 +75,10 @@
 </article>
 
         <!-- 04 -->
-        <article class="pitem">
+        <article class="pitem"
+  data-category="cologne"
+  data-sizes="10ml|30ml|50ml|70ml"
+  data-aromas="fresh|citrus">
   <div class="pitem__img">
     <img src="<?php echo e(asset('img/citrus.png')); ?>" alt="SCENTC Citrus Aura Fresh Eau De Cologne">
 
@@ -82,7 +96,10 @@
 </article>
 
         <!-- 05 -->
-        <article class="pitem">
+        <article class="pitem"
+  data-category="edt"
+  data-sizes="20ml|50ml|70ml"
+  data-aromas="floral">
   <div class="pitem__img">
     <img src="<?php echo e(asset('img/velvet1.png')); ?>" alt="SCENTC Velvet Bloom Eau De Toilette">
 
@@ -100,7 +117,10 @@
 </article>
 
         <!-- 06 -->
-        <article class="pitem">
+        <article class="pitem"
+  data-category="edp"
+  data-sizes="10ml|30ml|50ml|70ml"
+  data-aromas="warm|gourmand">
   <div class="pitem__img">
     <img src="<?php echo e(asset('img/vanila.png')); ?>" alt="SCENTC Vanilla Suede Eau De Parfum">
 
@@ -118,7 +138,10 @@
 </article>
 
         <!-- 07 -->
-      <article class="pitem">
+      <article class="pitem"
+  data-category="edt"
+  data-sizes="10ml|20ml|25ml|30ml"
+  data-aromas="fresh|woody">
   <div class="pitem__img">
     <img src="<?php echo e(asset('img/silver2.png')); ?>" alt="SCENTC Silver Mist Eau De Toilette">
 
@@ -135,7 +158,10 @@
   <div class="pitem__brand">Cool. Clean. Modern.</div>
 </article>
         <!-- 08 -->
-        <article class="pitem">
+        <article class="pitem"
+  data-category="edt"
+  data-sizes="20ml|25ml|30ml"
+  data-aromas="fresh|citrus">
   <div class="pitem__img">
     <img src="<?php echo e(asset('img/blue.png')); ?>" alt="SCENTC Blue Neroli Eau De Toilette">
 
@@ -153,7 +179,10 @@
 </article>
 
         <!-- 09 -->
-        <article class="pitem">
+        <article class="pitem"
+  data-category="edp"
+  data-sizes="10ml|20ml|30ml"
+  data-aromas="woody">
   <div class="pitem__img">
     <img src="<?php echo e(asset('img/green.jpeg')); ?>" alt="SCENTC Emerald Cedar Eau De Parfum">
 
@@ -170,7 +199,11 @@
   <div class="pitem__brand">Deep. Smooth. Sophisticated.</div>
 </article>
       </div>
-    </div>
+    <div class="catalog-filter-empty" id="catalogFilterEmpty" hidden>
+  <i class="bi bi-search"></i>
+  <strong>Produk tidak ditemukan.</strong>
+  <span>Coba ubah kategori, ukuran, atau karakter aroma.</span>
+</div>
 
 
 <section class="refill-guide-wide">
@@ -181,79 +214,225 @@
       <h2 class="refill-guide-wide__title">Cara Refill di Scentcycle</h2>
 
       <p class="refill-guide-wide__desc">
-        Nikmati pengalaman refill parfum yang lebih praktis, higienis, dan terarah.
-        Setiap tahap dirancang agar proses pengisian berjalan aman, presisi, dan tetap nyaman
-        untuk setiap pelanggan, mulai dari memilih scent, menyiapkan botol yang sesuai,
-        memosisikan botol pada mesin, memantau proses pengisian secara real-time,
-        hingga botol kembali siap digunakan atau dibawa pulang dalam kondisi optimal.
+        Ikuti proses refill parfum yang lebih praktis, higienis, dan presisi melalui
+        smart refill station Scentcycle. Dari memilih scent, menyiapkan botol,
+        memindai pesanan, hingga botol siap digunakan kembali.
       </p>
+
+      <div class="refill-guide-wide__chips">
+        <span>Praktis</span>
+        <span>Higienis</span>
+        <span>Presisi</span>
+        <span>Eco Friendly</span>
+      </div>
     </div>
 
-    <div class="refill-guide-wide__steps">
-      <article class="refill-guide-card">
-        <div class="refill-guide-card__number">01</div>
-        <div class="refill-guide-card__content">
-          <h3>Menentukan Scent</h3>
-          <p>
-            Pilih scent favorit Anda melalui website Scentcycle dengan memastikan varian aroma,
-            ukuran isi, dan detail pesanan sudah benar. Tahap ini penting agar proses refill
-            selanjutnya berjalan lebih cepat, tepat, dan sesuai dengan preferensi yang Anda inginkan.
-          </p>
-        </div>
-      </article>
+    <div class="refill-guide-wide__layout">
 
-      <article class="refill-guide-card">
-        <div class="refill-guide-card__number">02</div>
-        <div class="refill-guide-card__content">
-          <h3>Siapkan Botol</h3>
-          <p>
-            Gunakan botol yang bersih, kering, dan aman untuk proses pengisian ulang. Pastikan juga
-            ukuran botol compatible dengan kapasitas refill yang dipilih agar parfum dapat terisi
-            dengan baik tanpa mengganggu kualitas, kebersihan, maupun kenyamanan saat proses berlangsung.
-          </p>
-        </div>
-      </article>
+      <div class="refill-guide-wide__steps" id="refillGuideSteps">
 
-      <article class="refill-guide-card">
-        <div class="refill-guide-card__number">03</div>
-        <div class="refill-guide-card__content">
-          <h3>Posisikan Botol</h3>
-          <p>
-            Letakkan botol pada area pengisian dengan posisi yang stabil dan presisi. Setelah botol
-            terbaca oleh sensor, sistem akan mendeteksi kesiapan pengisian sehingga proses refill
-            dapat dimulai secara lebih akurat, aman, dan minim risiko kesalahan posisi.
-          </p>
-        </div>
-      </article>
+        <button type="button" class="refill-guide-card is-active"
+          data-step="01"
+      
+          data-stage="1"
+          data-title="Menentukan Scent"
+          data-desc="Pilih scent favorit melalui website Scentcycle. Pastikan varian aroma, ukuran isi, cabang mesin, dan detail pesanan sudah sesuai sebelum melanjutkan proses refill."
+          data-screen="SELECT SCENT"
+          data-tags="Pilih aroma,Ukuran refill,Cabang mesin">
+          <div class="refill-guide-card__number">01</div>
+          <div class="refill-guide-card__content">
+            <h3>Menentukan Scent</h3>
+            <p>Pilih aroma, ukuran refill, dan cabang mesin melalui website.</p>
+          </div>
+        </button>
 
-      <article class="refill-guide-card">
-        <div class="refill-guide-card__number">04</div>
-        <div class="refill-guide-card__content">
-          <h3>Lihat Progress</h3>
-          <p>
-            Pantau jalannya proses refill melalui indikator LCD yang menampilkan perkembangan volume
-            isi secara real-time. Dengan begitu, Anda dapat melihat bahwa pengisian berlangsung sesuai
-            pesanan dan memastikan setiap tahap berjalan dengan jelas, transparan, dan terukur.
-          </p>
-        </div>
-      </article>
+        <button type="button" class="refill-guide-card"
+          data-step="02"
+          data-percent="0%"
+          data-stage="2"
+          data-title="Siapkan Botol"
+          data-desc="Gunakan botol yang bersih, kering, dan sesuai dengan kapasitas refill yang dipilih. Botol yang siap membantu proses pengisian berjalan lebih aman dan optimal."
+          data-screen="READY BOTTLE"
+          data-tags="Botol bersih,Botol kering,Ukuran sesuai">
+          <div class="refill-guide-card__number">02</div>
+          <div class="refill-guide-card__content">
+            <h3>Siapkan Botol</h3>
+            <p>Pastikan botol bersih, kering, dan sesuai ukuran pesanan.</p>
+          </div>
+        </button>
 
-      <article class="refill-guide-card refill-guide-card--final">
-        <div class="refill-guide-card__number">05</div>
-        <div class="refill-guide-card__content">
-          <h3>Ambil Botol</h3>
-          <p>
-            Setelah pengisian selesai, ambil kembali botol Anda dengan hati-hati dan periksa hasilnya
-            secara singkat. Pastikan volume refill telah sesuai dengan pesanan sehingga parfum siap
-            digunakan kembali, disimpan, atau dibawa pulang dalam kondisi yang rapi dan optimal.
-          </p>
+        <button type="button" class="refill-guide-card"
+          data-step="03"
+          data-percent="10%"
+            data-stage="3"
+          data-title="Posisikan Botol"
+          data-desc="Letakkan botol pada area pengisian mesin dengan posisi stabil. Sensor akan membantu mendeteksi kesiapan botol sebelum proses refill dimulai."
+          data-screen="PLACE BOTTLE"
+          data-tags="Sensor botol,Posisi stabil,Minim tumpah">
+          <div class="refill-guide-card__number">03</div>
+          <div class="refill-guide-card__content">
+            <h3>Posisikan Botol</h3>
+            <p>Letakkan botol pada refill station sampai posisi terbaca sensor.</p>
+          </div>
+        </button>
+
+        <button type="button" class="refill-guide-card"
+          data-step="04"
+          data-percent="72%"
+          data-stage="4"
+          data-title="Lihat Progress"
+          data-desc="Pantau jalannya proses refill melalui indikator mesin. Sistem menampilkan progress pengisian secara real-time agar proses lebih transparan dan terukur."
+          data-screen="REFILLING..."
+          data-tags="Real-time,LCD progress,Volume presisi">
+          <div class="refill-guide-card__number">04</div>
+          <div class="refill-guide-card__content">
+            <h3>Lihat Progress</h3>
+            <p>Pantau proses refill melalui indikator progress pada mesin.</p>
+          </div>
+        </button>
+
+        <button type="button" class="refill-guide-card refill-guide-card--final"
+          data-step="05"
+          data-percent="100%"
+          data-stage="5"
+          data-title="Ambil Botol"
+          data-desc="Setelah pengisian selesai, ambil kembali botol dengan hati-hati. Parfum siap digunakan kembali, disimpan, atau dibawa pulang dalam kondisi optimal."
+          data-screen="DONE"
+          data-tags="Refill selesai,Siap digunakan,Ramah lingkungan">
+          <div class="refill-guide-card__number">05</div>
+          <div class="refill-guide-card__content">
+            <h3>Ambil Botol</h3>
+            <p>Ambil botol dan parfum siap digunakan kembali.</p>
+          </div>
+        </button>
+
+      </div>
+
+      <aside class="refill-guide-preview" id="refillGuidePreview">
+  <div class="refill-guide-preview__top">
+    <span id="refillPreviewStep">STEP 01</span>
+    <span class="refill-guide-preview__status">SMART REFILL</span>
+  </div>
+
+  <div class="refill-guide-preview__visual stage-1" id="refillPreviewVisual">
+    <div class="refill-machine">
+      <div class="refill-machine__screen">
+  <small>SCENTCYCLE</small>
+  <strong id="refillPreviewScreen">SELECT SCENT</strong>
+
+  <div class="refill-machine__screen-meta">
+  <span class="refill-machine__screen-label">REFILL LEVEL</span>
+  <span class="refill-machine__progress is-empty" id="refillPreviewPercent"></span>
+</div>
+</div>
+      <div class="refill-machine__order-light"></div>
+      <div class="refill-machine__nozzle-wrap">
+  <div class="refill-machine__nozzle"></div>
+  <div class="refill-machine__sensor-dot"></div>
+  <div class="refill-machine__sensor-beam"></div>
+</div>
+
+      <div class="refill-machine__guide-text">PUT YOUR BOTTLE HERE</div>
+
+      <div class="refill-machine__refill-area">
+        <div class="refill-machine__bottle">
+          <span class="refill-machine__liquid"></span>
         </div>
-      </article>
+
+        <div class="refill-machine__flow"></div>
+        <div class="refill-machine__done">DONE</div>
+      </div>
+
+      <div class="refill-machine__base"></div>
+    </div>
+  </div>
+
+  <div class="refill-guide-preview__copy">
+    <h3 id="refillPreviewTitle">Menentukan Scent</h3>
+    <p id="refillPreviewDesc">
+      Pilih scent favorit melalui website Scentcycle. Pastikan varian aroma, ukuran isi,
+      cabang mesin, dan detail pesanan sudah sesuai sebelum melanjutkan proses refill.
+    </p>
+  </div>
+
+  <div class="refill-guide-preview__tags" id="refillPreviewTags">
+    <span>Pilih aroma</span>
+    <span>Ukuran refill</span>
+    <span>Cabang mesin</span>
+  </div>
+
+  <div class="refill-guide-preview__note">
+    <strong>Tips:</strong> pastikan ukuran refill sesuai dengan kapasitas botol agar proses berjalan optimal.
+  </div>
+</aside>
+
     </div>
 
   </div>
 </section>
-</div>
-</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const cards = document.querySelectorAll('.refill-guide-card');
+  const preview = document.getElementById('refillGuidePreview');
+  const previewVisual = document.getElementById('refillPreviewVisual');
+
+  const stepText = document.getElementById('refillPreviewStep');
+  const screenText = document.getElementById('refillPreviewScreen');
+  const titleText = document.getElementById('refillPreviewTitle');
+  const descText = document.getElementById('refillPreviewDesc');
+  const tagsWrap = document.getElementById('refillPreviewTags');
+  const percentText = document.getElementById('refillPreviewPercent');
+
+  if (!cards.length || !preview || !previewVisual) return;
+
+  cards.forEach(function(card) {
+    card.addEventListener('click', function() {
+      cards.forEach(function(item) {
+        item.classList.remove('is-active');
+      });
+
+      card.classList.add('is-active');
+
+      const step = card.dataset.step;
+      const stage = card.dataset.stage;
+      const title = card.dataset.title;
+      const desc = card.dataset.desc;
+      const screen = card.dataset.screen;
+      const tags = card.dataset.tags ? card.dataset.tags.split(',') : [];
+      const percent = card.dataset.percent || '0%';
+
+      preview.classList.remove('is-changing');
+      void preview.offsetWidth;
+      preview.classList.add('is-changing');
+
+      previewVisual.classList.remove('stage-1', 'stage-2', 'stage-3', 'stage-4', 'stage-5');
+      previewVisual.classList.add('stage-' + stage);
+
+      stepText.textContent = 'STEP ' + step;
+      screenText.textContent = screen;
+      titleText.textContent = title;
+      descText.textContent = desc;
+      if (percentText) {
+  if (stage === '1') {
+    percentText.textContent = '';
+    percentText.classList.add('is-empty');
+  } else {
+    percentText.textContent = percent;
+    percentText.classList.remove('is-empty');
+  }
+}
+
+      tagsWrap.innerHTML = '';
+
+      tags.forEach(function(tag) {
+        const span = document.createElement('span');
+        span.textContent = tag.trim();
+        tagsWrap.appendChild(span);
+      });
+    });
+  });
+});
+</script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\XAMPP 2\htdocs\perfume-projek\resources\views/refill.blade.php ENDPATH**/ ?>

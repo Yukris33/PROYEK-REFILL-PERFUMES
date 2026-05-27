@@ -91,6 +91,10 @@ class CartController extends Controller
     protected function getProductConfig(): array
     {
         return [
+            // =========================
+            // REFILL / PARFUM PRODUCTS
+            // =========================
+
             'blue-neroli' => [
                 'name' => 'SCENTC Blue Neroli Eau De Toilette',
                 'brand' => 'SCENTC',
@@ -118,101 +122,259 @@ class CartController extends Controller
                 ],
             ],
 
-
-        'emerald-cedar' => [
-            'name' => 'SCENTC Emerald Cedar Eau De Parfum',
-            'brand' => 'SCENTC',
-            'category' => 'refill',
-            'description' => 'Deep woody parfum',
-            'image' => 'img/green.jpeg',
-            'sizes' => [
-                10 => 35000,
-                20 => 49000,
-                30 => 65000,
+            'emerald-cedar' => [
+                'name' => 'SCENTC Emerald Cedar Eau De Parfum',
+                'brand' => 'SCENTC',
+                'category' => 'refill',
+                'description' => 'Deep woody parfum',
+                'image' => 'img/green.jpeg',
+                'sizes' => [
+                    10 => 35000,
+                    20 => 49000,
+                    30 => 65000,
+                ],
             ],
-        ],
 
-        'midnight-oud-intense' => [
-    'name' => 'SCENTC Midnight Oud Intense Eau De Parfum',
-    'brand' => 'SCENTC',
-    'category' => 'refill',
-    'description' => 'Dark bold oud parfum',
-    'image' => 'img/midnight.png',
-    'sizes' => [
-        20 => 49000,
-        50 => 95000,
-        100 => 159000,
-    ],
-],
+            'midnight-oud-intense' => [
+                'name' => 'SCENTC Midnight Oud Intense Eau De Parfum',
+                'brand' => 'SCENTC',
+                'category' => 'refill',
+                'description' => 'Dark bold oud parfum',
+                'image' => 'img/midnight.png',
+                'sizes' => [
+                    20 => 49000,
+                    50 => 95000,
+                    100 => 159000,
+                ],
+            ],
 
-    'ocean-breeze-aqua' => [
-    'name' => 'SCENTC Ocean Breeze Aqua Eau De Parfum',
-    'brand' => 'SCENTC',
-    'category' => 'refill',
-    'description' => 'Fresh aquatic parfum',
-    'image' => 'img/ocean breeze fix.png',
-    'sizes' => [
-        20 => 35000,
-        30 => 55000,
-        50 => 79000,
-        100 => 139000,
-    ],
-],
+            'ocean-breeze-aqua' => [
+                'name' => 'SCENTC Ocean Breeze Aqua Eau De Parfum',
+                'brand' => 'SCENTC',
+                'category' => 'refill',
+                'description' => 'Fresh aquatic parfum',
+                'image' => 'img/ocean breeze fix.png',
+                'sizes' => [
+                    20 => 35000,
+                    30 => 55000,
+                    50 => 79000,
+                    100 => 139000,
+                ],
+            ],
 
-    'prestige-signature' => [
-    'name' => 'SCENTC Prestige Signature Eau De Parfum',
-    'brand' => 'SCENTC',
-    'category' => 'refill',
-    'description' => 'Premium warm elegant parfum',
-    'image' => 'img/peach bloom 4 (1) (1).png',
-    'sizes' => [
-        15 => 39000,
-        30 => 69000,
-        50 => 99000,
-        100 => 169000,
-    ],
-],
+            'prestige-signature' => [
+                'name' => 'SCENTC Prestige Signature Eau De Parfum',
+                'brand' => 'SCENTC',
+                'category' => 'refill',
+                'description' => 'Premium warm elegant parfum',
+                'image' => 'img/peach bloom 4 (1) (1).png',
+                'sizes' => [
+                    15 => 39000,
+                    30 => 69000,
+                    50 => 99000,
+                    100 => 169000,
+                ],
+            ],
 
-    'silver-mist' => [
-'name' => 'SCENTC Silver Mist Eau De Toilette',
-'brand' => 'SCENTC',
-'category' => 'refill',
-'description' => 'Cool clean woody parfum',
-'image' => 'img/silver2.png',
-'sizes' => [
-10 => 29000,
-20 => 39000,
-25 => 45000,
-30 => 55000,
-],
-],
+            'silver-mist' => [
+                'name' => 'SCENTC Silver Mist Eau De Toilette',
+                'brand' => 'SCENTC',
+                'category' => 'refill',
+                'description' => 'Cool clean woody parfum',
+                'image' => 'img/silver2.png',
+                'sizes' => [
+                    10 => 29000,
+                    20 => 39000,
+                    25 => 45000,
+                    30 => 55000,
+                ],
+            ],
 
-    'vanilla-suede' => [
-    'name' => 'SCENTC Vanilla Suede Eau De Parfum',
-    'brand' => 'SCENTC',
-    'category' => 'refill',
-    'description' => 'Warm creamy vanilla parfum',
-    'image' => 'img/vanila.png',
-    'sizes' => [
-        10 => 35000,
-        30 => 59000,
-        50 => 85000,
-        70 => 109000,
-    ],
-],
+            'vanilla-suede' => [
+                'name' => 'SCENTC Vanilla Suede Eau De Parfum',
+                'brand' => 'SCENTC',
+                'category' => 'refill',
+                'description' => 'Warm creamy vanilla parfum',
+                'image' => 'img/vanila.png',
+                'sizes' => [
+                    10 => 35000,
+                    30 => 59000,
+                    50 => 85000,
+                    70 => 109000,
+                ],
+            ],
 
-    'velvet-bloom' => [
-'name' => 'SCENTC Velvet Bloom Eau De Toilette',
-'brand' => 'SCENTC',
-'category' => 'refill',
-'description' => 'Soft elegant floral parfum',
-'image' => 'img/velvet1.png',
-'sizes' => [
-20 => 39000,
-50 => 79000,
-70 => 99000,
-],
-],
+            'velvet-bloom' => [
+                'name' => 'SCENTC Velvet Bloom Eau De Toilette',
+                'brand' => 'SCENTC',
+                'category' => 'refill',
+                'description' => 'Soft elegant floral parfum',
+                'image' => 'img/velvet1.png',
+                'sizes' => [
+                    20 => 39000,
+                    50 => 79000,
+                    70 => 99000,
+                ],
+            ],
+
+            // =========================
+            // BOTTLE PRODUCTS
+            // =========================
+
+            'travel-bottle-clear' => [
+                'name' => 'SCENTC Travel Bottle Clear',
+                'brand' => 'SCENTC',
+                'category' => 'bottle',
+                'description' => 'Portable clear refill bottle',
+                'image' => 'img/100ml.png',
+                'sizes' => [
+                    10 => 15000,
+                    30 => 25000,
+                    50 => 35000,
+                ],
+            ],
+
+            'minimal-frost-bottle' => [
+                'name' => 'SCENTC Minimal Frost Bottle',
+                'brand' => 'SCENTC',
+                'category' => 'bottle',
+                'description' => 'Minimal frosted glass refill bottle',
+                'image' => 'img/botol polosan2.png',
+                'sizes' => [
+                    20 => 22000,
+                    30 => 30000,
+                    50 => 42000,
+                ],
+            ],
+
+            'premium-spray-bottle' => [
+                'name' => 'SCENTC Premium Spray Bottle',
+                'brand' => 'SCENTC',
+                'category' => 'bottle',
+                'description' => 'Premium spray refill bottle',
+                'image' => 'img/1100ml.png',
+                'sizes' => [
+                    30 => 35000,
+                    50 => 50000,
+                    100 => 75000,
+                ],
+            ],
+
+            'matte-black-bottle' => [
+                'name' => 'SCENTC Matte Black Bottle',
+                'brand' => 'SCENTC',
+                'category' => 'bottle',
+                'description' => 'Matte black refill bottle',
+                'image' => 'img/b1.png',
+                'sizes' => [
+                    10 => 18000,
+                    20 => 26000,
+                    30 => 35000,
+                ],
+            ],
+
+            'classic-round-bottle' => [
+                'name' => 'SCENTC Classic Round Bottle',
+                'brand' => 'SCENTC',
+                'category' => 'bottle',
+                'description' => 'Classic round refill bottle',
+                'image' => 'img/b2.png',
+                'sizes' => [
+                    30 => 30000,
+                    50 => 45000,
+                    70 => 60000,
+                ],
+            ],
+
+            'crystal-glass-bottle' => [
+                'name' => 'SCENTC Crystal Glass Bottle',
+                'brand' => 'SCENTC',
+                'category' => 'bottle',
+                'description' => 'Crystal clear glass refill bottle',
+                'image' => 'img/b3.png',
+                'sizes' => [
+                    50 => 55000,
+                    100 => 85000,
+                ],
+            ],
+
+            'soft-pink-bottle' => [
+                'name' => 'SCENTC Soft Pink Bottle',
+                'brand' => 'SCENTC',
+                'category' => 'bottle',
+                'description' => 'Soft pink refill bottle',
+                'image' => 'img/b4.png',
+                'sizes' => [
+                    10 => 18000,
+                    20 => 26000,
+                    30 => 35000,
+                ],
+            ],
+
+            'ocean-blue-bottle' => [
+                'name' => 'SCENTC Ocean Blue Bottle',
+                'brand' => 'SCENTC',
+                'category' => 'bottle',
+                'description' => 'Ocean blue refill bottle',
+                'image' => 'img/b5.png',
+                'sizes' => [
+                    20 => 25000,
+                    30 => 35000,
+                    50 => 50000,
+                ],
+            ],
+
+            'rectangle-glass-bottle' => [
+                'name' => 'SCENTC Rectangle Glass Bottle',
+                'brand' => 'SCENTC',
+                'category' => 'bottle',
+                'description' => 'Rectangle glass refill bottle',
+                'image' => 'img/b6.png',
+                'sizes' => [
+                    30 => 40000,
+                    50 => 55000,
+                    100 => 90000,
+                ],
+            ],
+
+            'pocket-mini-bottle' => [
+                'name' => 'SCENTC Pocket Mini Bottle',
+                'brand' => 'SCENTC',
+                'category' => 'bottle',
+                'description' => 'Pocket mini refill bottle',
+                'image' => 'img/b7.png',
+                'sizes' => [
+                    10 => 12000,
+                    15 => 16000,
+                    20 => 20000,
+                ],
+            ],
+
+            'amber-refill-bottle' => [
+                'name' => 'SCENTC Amber Refill Bottle',
+                'brand' => 'SCENTC',
+                'category' => 'bottle',
+                'description' => 'Amber glass refill bottle',
+                'image' => 'img/bottle11.png',
+                'sizes' => [
+                    30 => 35000,
+                    50 => 50000,
+                    100 => 80000,
+                ],
+            ],
+
+            'signature-white-bottle' => [
+                'name' => 'SCENTC Signature White Bottle',
+                'brand' => 'SCENTC',
+                'category' => 'bottle',
+                'description' => 'Signature white refill bottle',
+                'image' => 'img/bottle12.png',
+                'sizes' => [
+                    20 => 30000,
+                    30 => 42000,
+                    50 => 60000,
+                ],
+            ],
         ];
     }
 
@@ -341,6 +503,10 @@ class CartController extends Controller
 
         $cart = $this->getActiveCart();
 
+        if ($request->has('buy_now')) {
+            CartItem::where('cart_id', $cart->id)->delete();
+        }
+
         $cartItem = CartItem::where('cart_id', $cart->id)
             ->where('product_id', $product->id)
             ->where('product_variant_id', $variant->id)
@@ -361,9 +527,24 @@ class CartController extends Controller
             ]);
         }
 
+        if ($request->has('buy_now')) {
+            return redirect()
+                ->route('checkout.show')
+                ->with('success', 'Produk siap untuk checkout.');
+        }
+
         return redirect()
             ->route('cart.index')
             ->with('success', 'Produk berhasil dimasukkan ke keranjang.');
+    }
+
+    public function buyNow(Request $request)
+    {
+        $request->merge([
+            'buy_now' => 1,
+        ]);
+
+        return $this->add($request);
     }
 
     public function index()

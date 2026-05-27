@@ -156,7 +156,7 @@ Rp{{ number_format($grandTotal,0,',','.') }}
 </div>
 
 
-<a href="#" class="checkout-btn">
+<a href="{{ route('checkout.show') }}" class="checkout-btn">
 Checkout
 </a>
 

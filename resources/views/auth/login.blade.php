@@ -75,20 +75,42 @@
     <div class="shield-icon"><i class="bi bi-shield-lock"></i></div>
     <h3>Login as Admin</h3>
 
-    <form action="#" method="POST" class="auth-form admin-form">
-        @csrf
+    <form action="{{ route('admin.login.submit') }}" method="POST" class="auth-form admin-form">
+    @csrf
 
-        <label>Admin ID</label>
-        <input type="text" name="admin_id" placeholder="Enter admin ID">
+    <label>Email Admin</label>
+    <div class="input-wrap">
+        <input
+            type="email"
+            name="admin_email"
+            value="{{ old('admin_email') }}"
+            placeholder="admin@example.com"
+            required
+        >
+        <i class="bi bi-person-badge"></i>
+    </div>
+    @error('admin_email')
+        <small class="error-text">{{ $message }}</small>
+    @enderror
 
-        <label>Password</label>
-        <div class="input-wrap">
-            <input type="password" name="admin_password" placeholder="••••••••">
-            <i class="bi bi-lock"></i>
-        </div>
+    <label>Password</label>
+    <div class="input-wrap">
+        <input
+            type="password"
+            name="admin_password"
+            placeholder="••••••••"
+            required
+        >
+        <i class="bi bi-lock"></i>
+    </div>
+    @error('admin_password')
+        <small class="error-text">{{ $message }}</small>
+    @enderror
 
-        <button type="submit" class="btn-auth btn-admin">Admin Login</button>
-    </form>
+    <button type="submit" class="btn-auth btn-admin">
+        Admin Login
+    </button>
+</form>
 </aside>
         </div>
     </div>

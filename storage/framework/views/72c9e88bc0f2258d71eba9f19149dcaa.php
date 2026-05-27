@@ -1,9 +1,3 @@
-<head>
-  <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
-</head>
-
-<body>
 
   <div class="promo-bar">
       <button class="promo-prev" type="button">‹</button>
@@ -130,6 +124,10 @@
           <img src="<?php echo e(asset('img/oullu.jpeg')); ?>" alt="Banner 3">
         </div>
 
+        <div class="hero-slide">
+          <img src="<?php echo e(asset('img/collab1.jpeg')); ?>" alt="Banner 4">
+        </div>
+
       </div>
     </div>
 
@@ -181,4 +179,4 @@
   })();
   </script>
 
-</body><?php /**PATH C:\XAMPP 2\htdocs\perfume-projek\resources\views/partials/header.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\XAMPP 2\htdocs\perfume-projek\resources\views/partials/header.blade.php ENDPATH**/ ?>

@@ -58,27 +58,66 @@ class AuthController extends Controller
     }
 
     public function login(Request $request)
-    {
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required', 'string'],
-        ], [
-            'email.required' => 'Email wajib diisi.',
-            'password.required' => 'Password wajib diisi.',
-        ]);
+{
+    $credentials = $request->validate([
+        'email' => ['required', 'email'],
+        'password' => ['required', 'string'],
+    ], [
+        'email.required' => 'Email wajib diisi.',
+        'password.required' => 'Password wajib diisi.',
+    ]);
 
-        $remember = $request->boolean('remember');
+    $remember = $request->boolean('remember');
 
-        if (!Auth::attempt($credentials, $remember)) {
-            return back()->withErrors([
-                'email' => 'Email atau password salah.',
-            ])->onlyInput('email');
-        }
-
-        $request->session()->regenerate();
-
-        return redirect()->intended(route('home'))->with('success', 'Login berhasil.');
+    if (!Auth::attempt($credentials, $remember)) {
+        return back()->withErrors([
+            'email' => 'Email atau password salah.',
+        ])->onlyInput('email');
     }
+
+    if (Auth::user()->role === 'admin') {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return back()->withErrors([
+            'email' => 'Akun admin harus login melalui form Login as Admin.',
+        ])->onlyInput('email');
+    }
+
+    $request->session()->regenerate();
+
+    return redirect()->intended(route('home'))->with('success', 'Login berhasil.');
+}
+
+public function adminLogin(Request $request)
+{
+    $validated = $request->validate([
+        'admin_email' => ['required', 'email'],
+        'admin_password' => ['required', 'string'],
+    ], [
+        'admin_email.required' => 'Email admin wajib diisi.',
+        'admin_email.email' => 'Format email admin tidak valid.',
+        'admin_password.required' => 'Password admin wajib diisi.',
+    ]);
+
+    $admin = User::where('email', $validated['admin_email'])
+        ->where('role', 'admin')
+        ->first();
+
+    if (!$admin || !Hash::check($validated['admin_password'], $admin->password)) {
+        return back()->withErrors([
+            'admin_email' => 'Email admin atau password salah.',
+        ])->onlyInput('admin_email');
+    }
+
+    Auth::login($admin);
+    $request->session()->regenerate();
+
+    return redirect('/admin/dashboard')
+        ->with('success', 'Login admin berhasil.');
+}
 
     public function logout(Request $request)
     {
