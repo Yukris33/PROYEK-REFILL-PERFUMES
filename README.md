@@ -1,59 +1,33 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+#Project Preview"
+blablabla
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+#Login page
+<img width="1917" height="917" alt="image" src="https://github.com/user-attachments/assets/35e0b90d-f351-42d0-ac2a-30ba3d183484" />
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+#checkout (bs update bs delete)
+<img width="1912" height="897" alt="image" src="https://github.com/user-attachments/assets/c75d492a-a65f-43ad-8122-5360384a5b27" />
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+#Payment ()
+<img width="1297" height="872" alt="image" src="https://github.com/user-attachments/assets/a349420d-bdf3-4ade-ab53-77d08ed14e03" />
+<img width="1270" height="832" alt="image" src="https://github.com/user-attachments/assets/a8e3c7dd-b859-4765-afaf-a08956b4b05f" />
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#hISTORY (bisa liat tanggal, harga, dan hasil ulasan dia dan rating dan poin yang di dapat)
+<img width="1917" height="907" alt="image" src="https://github.com/user-attachments/assets/6a4f2aaa-6284-4a50-b135-0239c4480ab4" />
 
-## Learning Laravel
+#Dashboard admin (bs liat total pendapatan, rating, stock, dll jumlah dibeli dll) dan juga ada kek grafik chart
+<img width="1916" height="887" alt="image" src="https://github.com/user-attachments/assets/9fda3468-abbe-4811-8a30-dbdd67458976" />
+<img width="1917" height="881" alt="image" src="https://github.com/user-attachments/assets/107543bd-4c3f-4627-bf16-36f3cc8a092c" />
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#Voucher (track pergerakan voucher, total voucher yang digunakan, yang ada dll dan ada riwayat klaim voucher user dan
+voucher yg tersedia)
+<img width="1510" height="836" alt="image" src="https://github.com/user-attachments/assets/73272edd-ba8c-4c05-8e73-d9c7048afc2e" />
+<img width="1535" height="822" alt="image" src="https://github.com/user-attachments/assets/9a854b0f-12b6-4421-a4fa-93e10501b92a" />
+<img width="1917" height="881" alt="image" src="https://github.com/user-attachments/assets/5f56ef95-c1ac-4418-84f2-3e974e2d3374" />
+<img width="1917" height="881" alt="image" src="https://github.com/user-attachments/assets/1de60392-8e31-4571-a846-fe1bf92415f0" />
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
